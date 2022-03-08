@@ -31,7 +31,7 @@ type View = "list" | "cards";
 let options: { label: string; value: string }[] = [];
 
 for (let item in LanguageEnum) {
-  options.push({ label: item.toLowerCase().replaceAll("_", " "), value: item });
+  options.push({ label: item.toLowerCase().replace(/_/g, " "), value: item });
 }
 
 const ResultsFilters = () => {
