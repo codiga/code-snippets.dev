@@ -66,7 +66,7 @@ const SearchBox = ({
         },
       });
 
-      console.log({data});
+      console.log({ data });
 
       setLoading(false);
 
@@ -94,6 +94,7 @@ const SearchBox = ({
   } = useCombobox({
     id: `search-box`,
     items: inputItems,
+    itemToString: (item) => (item && item.name ? item.name : ""),
     onSelectedItemChange: ({ selectedItem }) => {
       if (selectedItem) {
         push(getSnippetUrl(selectedItem));
