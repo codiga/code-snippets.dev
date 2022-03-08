@@ -27,8 +27,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
   const apolloClient = useApollo(pageProps);
 
-  console.log(theme);
-
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url);

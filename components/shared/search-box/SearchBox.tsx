@@ -66,8 +66,6 @@ const SearchBox = ({
         },
       });
 
-      console.log({ data });
-
       setLoading(false);
 
       if (fetchError) {
