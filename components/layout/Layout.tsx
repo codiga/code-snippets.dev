@@ -39,6 +39,10 @@ const Layout = ({
           content="code snippet, code snippets, code assistant, coding assistant"
         />
 
+        <meta key="distribution" name="distribution" content="global" />
+        <meta key="resourceType" name="resource-type" content="document" />
+        <meta key="audience" name="Audience" content="All" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -58,16 +62,9 @@ const Layout = ({
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#w" />
+        <meta name="msapplication-TileColor" content="#da532c" />
 
-        <meta key="distribution" name="distribution" content="global" />
-        <meta key="resourceType" name="resource-type" content="document" />
-        <meta key="audience" name="Audience" content="All" />
-
-        <meta
-          property="og:title"
-          content="Code Snippets"
-        />
+        <meta property="og:title" content="Code Snippets" />
         <meta
           property="og:description"
           content="Code Snippets for 15+ languages. Search and reuse code snippets publicly."
@@ -88,11 +85,7 @@ const Layout = ({
           name="twitter:creator"
           content="@getcodiga"
         />
-        <meta
-          key="twitterTitle"
-          name="twitter:title"
-          content="Code Snippets"
-        />
+        <meta key="twitterTitle" name="twitter:title" content="Code Snippets" />
         <meta
           key="twitterDescription"
           name="twitter:description"
