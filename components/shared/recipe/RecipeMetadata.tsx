@@ -1,20 +1,20 @@
 import { useRecipeContext } from "contexts/RecipeProvider";
+import { getSnippetUrl } from "lib/snippets";
 import Head from "next/head";
 
 const RecipeMetadata = () => {
-  const { name, description, language, keywords } = useRecipeContext() || {};
+  const { id, name, description, language, keywords } =
+    useRecipeContext() || {};
 
   const title = `Code Snippets: ${name}`;
   const metaDescription = `Code Snippet in ${language}: ${description}`;
+  const url = getSnippetUrl({ id, name });
 
   return (
     <Head>
       <title>{title}</title>
 
-      <meta
-        name="description"
-        content={metaDescription}
-      />
+      <meta name="description" content={metaDescription} />
 
       <meta
         name="keywords"
@@ -24,13 +24,10 @@ const RecipeMetadata = () => {
       />
 
       <meta property="og:title" content="Code Snippets" />
-      <meta
-        property="og:description"
-        content={metaDescription}
-      />
+      <meta property="og:description" content={metaDescription} />
       <meta property="og:image" content="/social/open-graph-snippets.png" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://codiga.io/" />
+      <meta property="og:url" content={url} />
       <meta property="og:locale" content="en_US" />
 
       <meta
@@ -49,7 +46,7 @@ const RecipeMetadata = () => {
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://codiga.io/social/open-graph-snippets.png"
+        content="https://code-snippets.dev/social/open-graph-snippets.png"
       />
     </Head>
   );

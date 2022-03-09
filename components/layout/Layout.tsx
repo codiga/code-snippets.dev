@@ -71,7 +71,7 @@ const Layout = ({
         />
         <meta property="og:image" content="/social/open-graph.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://codiga.io/" />
+        <meta property="og:url" content="https://code-snippets.dev/" />
         <meta property="og:locale" content="en_US" />
 
         <meta
@@ -94,7 +94,7 @@ const Layout = ({
         <meta
           key="twitterImage"
           name="twitter:image"
-          content="https://codiga.io/social/open-graph.png"
+          content="https://code-snippets.dev/social/open-graph.png"
         />
       </Head>
       <Header search={search} />
