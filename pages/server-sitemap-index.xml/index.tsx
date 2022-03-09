@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import { getSnippetSlug } from "lib/snippets";
 
 const SITE_URL = process.env.SITE_URL || "";
-const ENDPOINT = process.env.GRAPHQL_API || "";
+const ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_API || "";
 
 const QUERY_PUBLIC_ASSISTANT_DATA_COUNT = `{
   assistantPublicRecipesCount
