@@ -9,17 +9,29 @@ const SocialFooter = () => {
       <Text fontSize="xs">Share</Text>
       <HStack as="ul" spacing={6} listStyleType="none">
         <li>
-          <a href="#">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/intent/tweet/?url=https://code-snippets.dev&text=Check%20out%20this%20code%20snippet%20%23cleancode"
+          >
             <TwitterLogo />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.linkedin.com/shareArticle?mini=true&url=https://code-snippets.dev"
+          >
             <LinkedInLogo />
           </a>
         </li>
         <li>
-          <a href="#">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://code-snippets.dev"
+          >
             <FacebookLogo />
           </a>
         </li>

@@ -13,9 +13,17 @@ const RecipeComment = ({ author, date, content }: RecipeCommentProps) => {
     author?.info?.lastname || ""
   }`.trim();
 
+  const avatar = author?.id
+    ? `${process.env.NEXT_PUBLIC_CODIGA_API}/user/${author.id}/avatar`
+    : "";
+
   return (
     <VStack spacing={4} alignItems="flex-start">
-      <CommentAuthor name={name || "Anonymous User"} date={date?.toString() || ""} />
+      <CommentAuthor
+        avatar={avatar}
+        name={author?.username || name || "Anonymous User"}
+        date={date ? new Date(date)?.toLocaleString() : ""}
+      />
       <Text fontSize="sm">{content}</Text>
     </VStack>
   );

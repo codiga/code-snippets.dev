@@ -5,5 +5,6 @@ export type UserInfo = {
 
 export type User = {
   id?: number;
+  username?: string;
   info?: UserInfo;
 };

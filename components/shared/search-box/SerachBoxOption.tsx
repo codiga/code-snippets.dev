@@ -23,6 +23,7 @@ const SearchBoxOption = ({
     <Box
       as="a"
       d="flex"
+      cursor="pointer"
       justifyContent="space-between"
       p={3}
       borderBottom="1px solid"

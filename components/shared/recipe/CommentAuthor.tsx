@@ -1,17 +1,18 @@
 import { Avatar, HStack, Text, VStack } from "@chakra-ui/react";
 
 type CommentAuthorProps = {
+  avatar: string;
   name: string;
   date: string;
 };
 
-const CommentAuthor = ({ name, date }: CommentAuthorProps) => {
+const CommentAuthor = ({ avatar, name, date }: CommentAuthorProps) => {
   return (
     <HStack>
-      <Avatar />
-      <VStack alignItems="flex-start">
+      <Avatar name={name} src={avatar} />
+      <VStack alignItems="flex-start" spacing={1}>
         <Text fontSize="sm">{name}</Text>
-        <Text fontSize="xs">{new Date(date).toDateString()}</Text>
+        <Text fontSize="xs">{date}</Text>
       </VStack>
     </HStack>
   );

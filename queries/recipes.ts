@@ -52,6 +52,7 @@ export const GET_PUBLIC_RECIPES_FULL = gql`
         comment
         author {
           id
+          username
           info {
             firstname
             lastname
