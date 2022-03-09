@@ -6,6 +6,8 @@ export function getSnippetSlug(name: string | undefined, divider = "-") {
       .toLowerCase()
       .replace(/ /g, divider)
       .replace(/&/g, divider)
+      .replace(/</g, divider)
+      .replace(/>/g, divider)
       .replace(/\//g, divider)
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");

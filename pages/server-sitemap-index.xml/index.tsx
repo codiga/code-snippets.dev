@@ -93,7 +93,7 @@ async function getSitemap() {
 
   const recipesPaths = getRecipesPaths(assistantPublicRecipes);
 
-  recipesPaths.forEach((path) => {
+  recipesPaths.slice(540, 550).forEach((path) => {
     result.push({
       loc: path,
       changefreq: "daily",
@@ -101,6 +101,8 @@ async function getSitemap() {
       lastmod: new Date().toISOString(),
     });
   });
+  
+  console.log(result);
 
   return result;
 }
