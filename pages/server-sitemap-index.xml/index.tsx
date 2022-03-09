@@ -2,7 +2,7 @@ import { getServerSideSitemap, ISitemapField } from "next-sitemap";
 import { GetServerSideProps } from "next";
 import { getSnippetSlug } from "lib/snippets";
 
-const SITE_URL = process.env.SITE_URL || "";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "";
 const ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_API || "";
 
 const QUERY_PUBLIC_ASSISTANT_DATA_COUNT = `{
