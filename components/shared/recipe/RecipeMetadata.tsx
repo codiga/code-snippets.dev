@@ -4,13 +4,16 @@ import Head from "next/head";
 const RecipeMetadata = () => {
   const { name, description, language, keywords } = useRecipeContext() || {};
 
+  const title = `Code Snippets: ${name}`;
+  const metaDescription = `Code Snippet in ${language}: ${description}`;
+
   return (
     <Head>
-      <title>Code Snippets: {name}</title>
+      <title>{title}</title>
 
       <meta
         name="description"
-        content={`Code Snippet in ${language}: ${description}`}
+        content={metaDescription}
       />
 
       <meta
@@ -23,9 +26,9 @@ const RecipeMetadata = () => {
       <meta property="og:title" content="Code Snippets" />
       <meta
         property="og:description"
-        content="Code Snippets for 15+ languages. Search and reuse code snippets publicly."
+        content={metaDescription}
       />
-      <meta property="og:image" content="/social/open-graph.png" />
+      <meta property="og:image" content="/social/open-graph-snippets.png" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://codiga.io/" />
       <meta property="og:locale" content="en_US" />
@@ -41,12 +44,12 @@ const RecipeMetadata = () => {
       <meta
         key="twitterDescription"
         name="twitter:description"
-        content="Code Snippets for 15+ languages. Search and reuse code snippets publicly."
+        content={metaDescription}
       />
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://codiga.io/social/open-graph.png"
+        content="https://codiga.io/social/open-graph-snippets.png"
       />
     </Head>
   );
