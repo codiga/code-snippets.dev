@@ -11,6 +11,7 @@ const navVariant: SystemStyleFunction = (props) => {
 
     _hover: {
       textDecoration: "none",
+      color: "brandBlue.100",
     },
 
     _focus: {
