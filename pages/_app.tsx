@@ -12,6 +12,7 @@ import Background from "components/shared/Background";
 import "styles/prism.css";
 import { GA_TRACKING_ID, pageview } from "lib/gtag";
 import { rollbarConfig } from "lib/rollbar";
+import GlobalMetadata from "components/shared/GlobalMetadata";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -42,6 +43,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <RollbarProvider config={rollbarConfig}>
       <ErrorBoundary>
+        <GlobalMetadata />
         <ApolloProvider client={apolloClient}>
           <ChakraProvider theme={theme}>
             {getLayout(<Component {...pageProps} />)}

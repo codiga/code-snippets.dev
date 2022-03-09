@@ -247,7 +247,7 @@ const Tools: NextPageWithLayout = () => {
           <Heading size="lg">Not seeing your tool?</Heading>
           <Text>
             Send us an email at{" "}
-            <Link href="mailto:support@codiga.io">code-snippets.io</Link> to add
+            <Link href="mailto:contact@code-snippets.dev">code-snippets.io</Link> to add
             your tool to the list!
           </Text>
         </VStack>
