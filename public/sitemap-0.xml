@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://code-snippets.dev</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
-<url><loc>https://code-snippets.dev/contribute</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
-<url><loc>https://code-snippets.dev/search</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
-<url><loc>https://code-snippets.dev/server-sitemap-index.xml</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
-<url><loc>https://code-snippets.dev/snippets-101</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
-<url><loc>https://code-snippets.dev/tools</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-09T13:56:28.139Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev/contribute</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev/search</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev/server-sitemap-index.xml</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev/snippets-101</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
+<url><loc>https://www.code-snippets.dev/tools</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-03-10T00:20:15.750Z</lastmod></url>
 </urlset>
