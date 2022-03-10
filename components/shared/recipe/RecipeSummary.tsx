@@ -8,6 +8,7 @@ import RecipeTitle from "./RecipeTitle";
 
 type RecipeSummaryProps = {
   big?: boolean;
+  link?: boolean;
   selected?: boolean;
   direction?: "row" | "column";
   onClick?: () => void;
@@ -15,6 +16,7 @@ type RecipeSummaryProps = {
 
 const RecipeSummary = ({
   big = false,
+  link = false,
   selected = false,
   direction = "row",
   onClick = () => {},
@@ -35,9 +37,8 @@ const RecipeSummary = ({
       onClick={onClick}
       bg={selected ? "brandBlue.100" : "transparent"}
     >
-      <LinkBox>
-        <RecipeTitle />
-      </LinkBox>
+      <RecipeTitle link={link} />
+
       <Box d="flex" flexDirection={direction}>
         <RecipeStats mt={row ? 0 : 4} />
         <RecipeTags mt={row ? 0 : 4} />

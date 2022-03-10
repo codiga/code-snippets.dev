@@ -46,7 +46,7 @@ export type GetPublicRecipesVariables = {
   howmany: number;
   skip: number;
   term?: string | null;
-  languages?: Language;
+  languages?: Language[] | null;
   onlyPublic?: boolean;
 };
 

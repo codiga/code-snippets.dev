@@ -6,7 +6,7 @@ const RecipeTags = (props: StackProps) => {
 
   return (
     <HStack {...props}>
-      {tags?.map((tag, index) => (
+      {tags?.slice(0, 2).map((tag, index) => (
         <Tag key={index} variant="snippet">
           {tag}
         </Tag>

@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { Language } from "types/Language";
 
-const LANGUAGE_LOGO_MAP: { [x: string]: string } = {
+const LANGUAGE_LOGO_MAP: { [x in Language]: string } = {
+  Unknown: "/logos/c.svg",
+  "All languages": "/logos/c.svg",
   Docker: "/logos/docker.svg",
   Objectivec: "/logos/objective-c.svg",
   Terraform: "/logos/terraform.svg",
@@ -8,7 +11,7 @@ const LANGUAGE_LOGO_MAP: { [x: string]: string } = {
   Yaml: "/logos/yaml.svg",
   Typescript: "/logos/typescript.svg",
   Swift: "/logos/swift.svg",
-  Solidity: "/logos/solidty.svg",
+  Solidity: "/logos/solidity.svg",
   Sql: "/logos/sql.svg",
   Shell: "/logos/shell.svg",
   Scala: "/logos/scala.svg",
@@ -35,11 +38,11 @@ const LANGUAGE_LOGO_MAP: { [x: string]: string } = {
 };
 
 type LanguageIconProps = {
-  language: string;
+  language: Language;
 };
 
 const LanguageIcon = ({ language }: LanguageIconProps) => {
-  const src = LANGUAGE_LOGO_MAP[language] || '/logos/c.svg';
+  const src = LANGUAGE_LOGO_MAP[language] || "/logos/c.svg";
 
   return <Image alt={`${language} logo`} width={32} height={32} src={src} />;
 };

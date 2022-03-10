@@ -1,5 +1,4 @@
 import { Box, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
-import RecipeCard from "components/shared/recipe/RecipeCard";
 import RecipeSummary from "components/shared/recipe/RecipeSummary";
 import { RecipeProvider } from "contexts/RecipeProvider";
 import { Recipe } from "types/Recipe";
@@ -16,8 +15,6 @@ const Results = ({ selected, results, onSelect }: ResultsProps) => {
   return (
     <Box
       w={296}
-      // py={6}
-      // px={4}
       bg={bg}
       flexShrink={0}
       d="flex"

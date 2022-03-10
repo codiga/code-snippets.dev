@@ -1,5 +1,5 @@
 import { Box, HStack, Tag, Text, useColorModeValue } from "@chakra-ui/react";
-import { LanguageEnum } from "types/Language";
+import { UNKNOWN_LANGUAGE } from "types/Language";
 import { RecipeSummary } from "types/Recipe";
 import ChartOutlineIcon from "../icons/ChartOutlineIcon";
 import StarOutlineIcon from "../icons/StarOutlineIcon";
@@ -31,16 +31,20 @@ const SearchBoxOption = ({
       bg={selected ? "brandBlue.100" : "transparent"}
     >
       <HStack as="h1" spacing={2}>
-        <LanguageIcon language={language || LanguageEnum.UNKNOWN} />
+        <LanguageIcon language={language || UNKNOWN_LANGUAGE} />
         <Text fontSize="sm">{name}</Text>
       </HStack>
       <HStack spacing={2}>
         <ChartOutlineIcon />
         <Text fontSize="xs">{uses}</Text>
-        <StarOutlineIcon />
-        <Text fontSize="xs">{averageRating || "n/a"}</Text>
+        {averageRating && (
+          <>
+            <StarOutlineIcon />
+            <Text fontSize="xs">{averageRating}</Text>
+          </>
+        )}
         <HStack>
-          {tags?.map((tag, index) => (
+          {tags?.slice(0, 2).map((tag, index) => (
             <Tag key={index} variant="snippet">
               {tag}
             </Tag>

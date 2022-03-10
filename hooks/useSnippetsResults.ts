@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { GET_PUBLIC_RECIPES_FULL } from "queries/recipes";
 import { useEffect, useState } from "react";
+import { ALL_LANGUAGES, Language } from "types/Language";
 import {
   GetPublicRecipesFullData,
   GetPublicRecipesVariables,
@@ -21,19 +22,12 @@ export default function useSnippetsResults() {
 
   const [page, setPage] = useState(0);
   const [name, setName] = useState("");
-  // const [tag, setTag] = useState("");
-  // const [desc, setDesc] = useState(false);
-  // const [orderBy, setOrderBy] = useState(RecipeSortingFields.Name);
+  const [language, setLanguage] = useState("");
 
   useEffect(() => {
     setName(getSingleQueryValue(query.q) || "");
     setPage(Number(getSingleQueryValue(query.page)) || 0);
-    // setDesc(!!getSingleQueryValue(query.desc));
-    // setOrderBy(
-    //   (getSingleQueryValue(query.order) as RecipeSortingFields) ||
-    //     RecipeSortingFields.Name
-    // );
-    // setTag(getSingleQueryValue(query.tag) || "");
+    setLanguage(getSingleQueryValue(query.lang) || "");
   }, [query]);
 
   const { data, loading, error } = useQuery<
@@ -46,9 +40,7 @@ export default function useSnippetsResults() {
       skip: page * HOWMANY,
       term: name || null,
       onlyPublic: true,
-      // desc,
-      // tag: tag ? tag : undefined,
-      // orderBy,
+      languages: language ? [language as Language] : null,
     },
   });
 

@@ -61,8 +61,6 @@ const SearchBox = ({
           howmany: HOWMANY,
           skip: SKIP,
           onlyPublic: true,
-          // orderBy: ORDER_BY,
-          // desc: DESC,
         },
       });
 

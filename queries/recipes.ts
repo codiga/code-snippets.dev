@@ -74,37 +74,21 @@ export const GET_PUBLIC_RECIPE_BY_ID = gql`
       id
       name
       description
-      isPublic
-      filenamePatterns
       keywords
       tags
-      shortcut
       code
       imports
       language
-      creationTimestampMs
       uses
       averageRating
-      owner {
-        id
-        username
-        email
-        info {
-          firstname
-          lastname
-          url
-        }
-      }
       comments(howmany: $howmanycomments, skip: $skipcomments) {
         id
         creationTimestampMs
         rating
         comment
-        securityFlag
         author {
           id
           username
-          email
           info {
             firstname
             lastname
@@ -113,14 +97,6 @@ export const GET_PUBLIC_RECIPE_BY_ID = gql`
         }
       }
       commentsCount
-      cookbook {
-        id
-        name
-        description
-        isPublic
-        creationTimestampMs
-      }
-      isSubscribed
     }
   }
 `;

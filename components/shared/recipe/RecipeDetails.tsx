@@ -8,7 +8,7 @@ const RecipeDetails = () => {
 
   return (
     <Box maxW={340} bg={bg} flexShrink={0} d="flex" flexDirection="column">
-      <RecipeSummary big direction="column" />
+      <RecipeSummary big link direction="column" />
       <RecipeComments />
       <RecipeCallToAction />
     </Box>

@@ -10,8 +10,12 @@ const RecipeStats = (props: StackProps) => {
     <HStack spacing={2} {...props}>
       <ChartOutlineIcon />
       <Text fontSize="xs">{uses}</Text>
-      <StarOutlineIcon />
-      <Text fontSize="xs">{averageRating || "N/A"}</Text>
+      {averageRating && (
+        <>
+          <StarOutlineIcon />
+          <Text fontSize="xs">{averageRating}</Text>
+        </>
+      )}
     </HStack>
   );
 };

@@ -1,23 +1,37 @@
-import { HStack, LinkOverlay, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { HStack, Text } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
 import { getSnippetUrl } from "lib/snippets";
-import { LanguageEnum } from "types/Language";
+import { UNKNOWN_LANGUAGE } from "types/Language";
 import LanguageIcon from "../LanguageIcon";
 
-const RecipeTitle = () => {
+type RecipeTitleProps = {
+  link?: boolean;
+};
+
+const RecipeTitle = ({ link = false }: RecipeTitleProps) => {
   const { id, name, language } = useRecipeContext() || {};
 
   const url = getSnippetUrl({ id, name });
 
+  if (link) {
+    return (
+      <h1>
+        <NextLink href={url} passHref>
+          <HStack as="a" spacing={2}>
+            <LanguageIcon language={language || UNKNOWN_LANGUAGE} />
+            <Text fontSize="sm">{name}</Text>
+          </HStack>
+        </NextLink>
+      </h1>
+    );
+  }
+
   return (
-    <h1>
-      <LinkOverlay href={url}>
-        <HStack as="span" spacing={2}>
-          <LanguageIcon language={language || LanguageEnum.UNKNOWN} />
-          <Text fontSize="sm">{name}</Text>
-        </HStack>
-      </LinkOverlay>
-    </h1>
+    <HStack as="h1" spacing={2}>
+      <LanguageIcon language={language || UNKNOWN_LANGUAGE} />
+      <Text fontSize="sm">{name}</Text>
+    </HStack>
   );
 };
 
