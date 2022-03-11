@@ -8,7 +8,7 @@ export type HeaderProps = {
 
 const Header = ({ search = false }: HeaderProps) => {
   return (
-    <Container as="header" maxW="container.xl">
+    <Container as="header" maxW="100%">
       <HeaderDesktop search={search} d={{ base: "none", md: "flex" }} />
       <HeaderMobile search={search} d={{ base: "block", md: "none" }} />
     </Container>

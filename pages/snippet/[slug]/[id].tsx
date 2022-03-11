@@ -24,7 +24,7 @@ const Snippet: NextPageWithLayout<SnippetProps> = ({ id }) => {
   return (
     <RecipeProvider id={id}>
       <RecipeMetadata />
-      <Container maxW="container.xl" my={{ base: 4, md: 14 }}>
+      <Container maxW="100%" my={{ base: 4, md: 14 }}>
         <Paper
           h="100%"
           d="flex"

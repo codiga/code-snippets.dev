@@ -14,7 +14,7 @@ const Results = () => {
   }
 
   return (
-    <Container maxW="container.xl" my={{ base: 6, md: 14 }}>
+    <Container maxW="100%" my={{ base: 6, md: 14 }}>
       <ResultsFilters />
 
       {loading ? (
