@@ -1,7 +1,14 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import Paper from "components/shared/Paper";
 
 const ResultsEmpty = () => {
-  return <Box>Empty results!</Box>;
+  const bg = useColorModeValue("brand.100", "brand.900");
+
+  return (
+    <Paper h="100%" d="flex" overflow="hidden">
+      <Box bg={bg}>🔎 No code snippets to match your criteria</Box>
+    </Paper>
+  );
 };
 
 export default ResultsEmpty;

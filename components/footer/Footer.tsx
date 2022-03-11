@@ -4,7 +4,7 @@ import SponsorFooter from "./SponsorFooter";
 
 const Footer = () => {
   return (
-    <Container as="footer" maxW="container.xl">
+    <Container as="footer" maxW="100%">
       <Box
         d="flex"
         flexDirection={{ base: "column", md: "row" }}

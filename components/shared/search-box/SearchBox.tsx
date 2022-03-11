@@ -114,7 +114,7 @@ const SearchField = ({
   const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
     const { code } = event;
 
-    if (code === "Enter" && inputValue && highlightedIndex === -1) {
+    if (code === "Enter" && highlightedIndex === -1) {
       handleSearch();
     }
   };

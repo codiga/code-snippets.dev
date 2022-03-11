@@ -7,7 +7,13 @@ const RecipeDetails = () => {
   const bg = useColorModeValue("brand.100", "brand.900");
 
   return (
-    <Box maxW={340} bg={bg} flexShrink={0} d="flex" flexDirection="column">
+    <Box
+      maxW={{ base: "100%", md: 340 }}
+      bg={bg}
+      flexShrink={0}
+      d="flex"
+      flexDirection="column"
+    >
       <RecipeSummary big link direction="column" />
       <RecipeComments />
     </Box>
