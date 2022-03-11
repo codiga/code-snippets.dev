@@ -46,6 +46,7 @@ const LanguagesList = ({ selected, onChange }: LanguagesListProps) => {
       <ListItem
         onClick={() => onChange(null)}
         d="flex"
+        gridColumn="1 / span 3"
         alignItems="center"
         cursor="pointer"
         borderRadius={4}
@@ -55,7 +56,7 @@ const LanguagesList = ({ selected, onChange }: LanguagesListProps) => {
           background: "brandBlue.100",
         }}
       >
-        <Box as="span" flexShrink={0}>
+        <Box as="span" w="100%" textAlign="center">
           All languages
         </Box>
       </ListItem>
