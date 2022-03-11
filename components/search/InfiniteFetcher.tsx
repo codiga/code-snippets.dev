@@ -13,9 +13,7 @@ const InfiniteFetcher = ({ callback }: InfiniteFetcherProps) => {
   const isVisible = !!entry?.isIntersecting;
 
   useEffect(() => {
-    console.log("effect", { isVisible });
     if (isVisible) {
-      console.log("callback", { isVisible });
       const next = page + 1;
       setPage(next);
       callback(next);

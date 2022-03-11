@@ -1,5 +1,6 @@
 import {
   Box,
+  Spinner,
   useBreakpointValue,
   useColorModeValue,
   VStack,
@@ -21,7 +22,7 @@ const ResultsList = () => {
   const sm = useBreakpointValue({ base: true, md: false });
 
   const [selected, setSelected] = useState<Recipe | null>(null);
-  const { results, fetchMoreSnippets } = useSearchResultsContext();
+  const { loading, results, fetchMoreSnippets } = useSearchResultsContext();
 
   useEffect(() => {
     if (results?.length) {

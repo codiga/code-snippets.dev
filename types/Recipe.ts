@@ -7,13 +7,13 @@ export type Recipe = {
   name?: string;
   description?: string;
   tags?: string[];
-  code?: string;
   imports?: string[];
   uses?: number;
   keywords?: string[];
   averageRating?: number;
   comments?: Comment[];
   commentsCount?: number;
+  presentableFormat?: string;
 };
 
 export type RecipeSummary = Pick<
@@ -50,11 +50,7 @@ export type GetPublicRecipesVariables = {
   onlyPublic?: boolean;
 };
 
-export type GetPublicRecipesSummaryData = {
-  assistantRecipesSemanticSearch: RecipeSummary[];
-};
-
-export type GetPublicRecipesFullData = {
+export type GetSemanticPublicRecipesData = {
   assistantRecipesSemanticSearch: Recipe[];
 };
 

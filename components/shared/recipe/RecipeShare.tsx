@@ -22,11 +22,6 @@ import {
 } from "@chakra-ui/react";
 import useShareUrls from "hooks/useShareUrls";
 
-type RecipeShareProps = {
-  id: number;
-  code: string;
-};
-
 const RecipeShare = () => {
   const toast = useToast();
   const { directShareValue, HTLMShareValue, markdownShareValue, shareText } =

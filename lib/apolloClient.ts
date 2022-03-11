@@ -44,14 +44,18 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
-      uri: process.env.NEXT_PUBLIC_GRAPHQL_API, // Server URL (must be absolute)
-      credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
+      uri: process.env.NEXT_PUBLIC_GRAPHQL_API,
+      credentials: "same-origin",
     }),
     cache: new InMemoryCache({
       typePolicies: {
         Query: {
           fields: {
-            assistantRecipesSemanticSearch: skipLimitPagination(),
+            assistantRecipesSemanticSearch: skipLimitPagination([
+              "term",
+              "languages",
+              "howmany",
+            ]),
           },
         },
       },

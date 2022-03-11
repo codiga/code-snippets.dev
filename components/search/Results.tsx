@@ -9,16 +9,14 @@ import ResultsSkeleton from "./ResultsSkeleton";
 const Results = () => {
   const { view, loading, results } = useSearchResultsContext();
 
-  if (!loading && !results?.length) {
-    return <ResultsEmpty />;
-  }
-
   return (
     <Container maxW="100%" my={{ base: 6, md: 14 }}>
       <ResultsFilters />
 
       {loading ? (
         <ResultsSkeleton />
+      ) : !results?.length ? (
+        <ResultsEmpty />
       ) : view === "cards" ? (
         <ResultsCards />
       ) : (

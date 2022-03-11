@@ -1,15 +1,15 @@
 import { useLazyQuery } from "@apollo/client";
-import { GET_PUBLIC_RECIPES_SUMMARY } from "queries/recipes";
+import { GET_SEMANTIC_PUBLIC_RECIPES } from "queries/recipes";
 import {
-  GetPublicRecipesSummaryData,
+  GetSemanticPublicRecipesData,
   GetPublicRecipesVariables,
 } from "types/Recipe";
 
 export default function useSnippetsSummary() {
-  const [fetchSnippetsSummary] =
-    useLazyQuery<GetPublicRecipesSummaryData, GetPublicRecipesVariables>(
-      GET_PUBLIC_RECIPES_SUMMARY
-    );
+  const [fetchSnippetsSummary] = useLazyQuery<
+    GetSemanticPublicRecipesData,
+    GetPublicRecipesVariables
+  >(GET_SEMANTIC_PUBLIC_RECIPES);
 
   return fetchSnippetsSummary;
 }

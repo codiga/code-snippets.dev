@@ -18,7 +18,17 @@ import NextLink from "next/link";
 import debounce from "lodash/debounce";
 import { getSnippetUrl } from "lib/snippets";
 import { getSingleQueryValue } from "hooks/useSearchQueryParams";
+import NoSsr from "../NoSsr";
 
+/**
+ * if you need to update HOWMANY please consider the following:
+ * ApolloCache uses the query arguments as keys to store the data
+ * if you set it to 10 it will collide with the results list cache
+ * https://github.com/codiga/code-snippets.io/blob/main/hooks/useSnippetsResults.ts#L10
+ * 
+ * until we find a better way to handle this be mindful about it!
+ * 
+ * */ 
 const HOWMANY = 6;
 const SKIP = 0;
 
@@ -59,6 +69,7 @@ const SearchField = ({
           term: inputValue,
           howmany: HOWMANY,
           skip: SKIP,
+          languages: null,
           onlyPublic: true,
         },
       });
@@ -89,7 +100,7 @@ const SearchField = ({
   } = useCombobox({
     id: `search-box`,
     items: inputItems,
-    initialInputValue: getSingleQueryValue(query.q),
+    initialInputValue: getSingleQueryValue(query.q) || "",
     itemToString: (item) => (item && item.name ? item.name : ""),
     onSelectedItemChange: ({ selectedItem }) => {
       if (selectedItem) {
@@ -131,7 +142,7 @@ const SearchField = ({
   };
 
   return (
-    <Box pos="relative" maxW={590} mx="auto" flexGrow={2}>
+    <Box pos="relative" maxW={{ base: "100%", md: 590 }} mx="auto" flexGrow={2}>
       <Box
         position="relative"
         d="flex"
@@ -192,6 +203,7 @@ const SearchField = ({
         zIndex={100}
         mt={2}
         w="100%"
+        minW={590}
         bg={bg}
         shadow="lg"
         overflow="hidden"
@@ -232,7 +244,11 @@ const SearchBox = (props: SearchBoxProps) => {
 
   if (!isReady) return null;
 
-  return <SearchField {...props} />;
+  return (
+    <NoSsr>
+      <SearchField {...props} />
+    </NoSsr>
+  );
 };
 
 export default SearchBox;

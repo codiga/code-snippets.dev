@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { GET_PUBLIC_RECIPES_FULL } from "queries/recipes";
+import { GET_SEMANTIC_PUBLIC_RECIPES } from "queries/recipes";
 import {
-  GetPublicRecipesFullData,
+  GetSemanticPublicRecipesData,
   GetPublicRecipesVariables,
 } from "types/Recipe";
 import useSearchQueryParams from "./useSearchQueryParams";
@@ -13,11 +13,11 @@ export default function useSnippetsResults() {
   const { isReady } = useRouter();
 
   const { term, language, view } = useSearchQueryParams();
-
+  console.log({ term });
   const { data, loading, error, fetchMore } = useQuery<
-    GetPublicRecipesFullData,
+    GetSemanticPublicRecipesData,
     GetPublicRecipesVariables
-  >(GET_PUBLIC_RECIPES_FULL, {
+  >(GET_SEMANTIC_PUBLIC_RECIPES, {
     skip: !isReady,
     variables: {
       howmany: HOWMANY,

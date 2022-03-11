@@ -1,28 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_PUBLIC_RECIPES_SUMMARY = gql`
-  query getPublicRecipes(
-    $howmany: Long!
-    $skip: Long!
-    $term: String
-    $onlyPublic: Boolean
-  ) {
-    assistantRecipesSemanticSearch(
-      howmany: $howmany
-      skip: $skip
-      term: $term
-      onlyPublic: $onlyPublic
-    ) {
-      id
-      name
-      tags
-      uses
-      language
-    }
-  }
-`;
-
-export const GET_PUBLIC_RECIPES_FULL = gql`
+export const GET_SEMANTIC_PUBLIC_RECIPES = gql`
   query getPublicRecipes(
     $howmany: Long!
     $skip: Long!
@@ -39,27 +17,9 @@ export const GET_PUBLIC_RECIPES_FULL = gql`
     ) {
       id
       name
-      description
       tags
-      code
-      imports
-      language
       uses
-      comments(howmany: 100, skip: 0) {
-        id
-        creationTimestampMs
-        rating
-        comment
-        author {
-          id
-          username
-          info {
-            firstname
-            lastname
-          }
-        }
-      }
-      commentsCount
+      language
     }
   }
 `;
@@ -76,7 +36,7 @@ export const GET_PUBLIC_RECIPE_BY_ID = gql`
       description
       keywords
       tags
-      code
+      presentableFormat
       imports
       language
       uses

@@ -21,11 +21,11 @@ type RecipeCodeProps = BoxProps & {
 
 const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
   const [loaded, setLoaded] = useState(false);
-  const { code, language } = useRecipeContext() || {};
+  const { presentableFormat, language } = useRecipeContext() || {};
   const bg = useColorModeValue("white", "brand.500");
   const toast = useToast();
 
-  const decoded = decodeIndent(code);
+  const decoded = decodeIndent(presentableFormat);
 
   const copyToClipboard = () => {
     try {
