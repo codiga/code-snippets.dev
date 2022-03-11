@@ -21,3 +21,11 @@ export function getSnippetUrl({ id, name }: Partial<Recipe>) {
 
   return `/snippet/${slug}/${id}`;
 }
+
+export function getRecipeUrl({ id, keywords }: Partial<Recipe>) {
+  const divider = keywords && keywords.length > 0 ? `-` : "";
+
+  return `${process.env.NEXT_PUBLIC_CODIGA_URL}/hub/recipe/${id}${divider}${keywords?.join(
+    "-"
+  )}/view`;
+}

@@ -1,8 +1,11 @@
 import { VStack, Link, Text } from "@chakra-ui/react";
+import { useRecipeContext } from "contexts/RecipeProvider";
 import useShareUrls from "hooks/useShareUrls";
+import { getRecipeUrl } from "lib/snippets";
 
 const RecipeCallToAction = () => {
-  const { directShareValue } = useShareUrls();
+  const { id, keywords } = useRecipeContext() || {};
+  const codigaRecipeUrl = getRecipeUrl({ id, keywords });
 
   return (
     <VStack
@@ -14,7 +17,7 @@ const RecipeCallToAction = () => {
       borderTopColor="whiteAlpha.200"
     >
       <Link
-        href={directShareValue}
+        href={codigaRecipeUrl}
         target="_blank"
         rel="noreferrer"
         variant="gradient"

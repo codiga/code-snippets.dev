@@ -1,6 +1,7 @@
 import { Box, Link, LinkBox, Text } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
 import useShareUrls from "hooks/useShareUrls";
+import { getRecipeUrl } from "lib/snippets";
 import { Recipe } from "types/Recipe";
 import RecipeStats from "./RecipeStats";
 import RecipeTags from "./RecipeTags";
@@ -21,8 +22,8 @@ const RecipeSummary = ({
   direction = "row",
   onClick = () => {},
 }: RecipeSummaryProps) => {
-  const { description } = useRecipeContext() || {};
-  const { directShareValue } = useShareUrls();
+  const { id, keywords, description } = useRecipeContext() || {};
+  const codigaRecipeUrl = getRecipeUrl({ id, keywords });
 
   const row = direction === "row";
 
@@ -45,7 +46,7 @@ const RecipeSummary = ({
       </Box>
       {big && (
         <>
-          <Link href={directShareValue} mt={row ? 0 : 4} fontSize="sm">
+          <Link href={codigaRecipeUrl} mt={row ? 0 : 4} fontSize="sm">
             View Recipe on Codiga.io
           </Link>
           <Text fontSize="sm" mt={row ? 0 : 4}>
