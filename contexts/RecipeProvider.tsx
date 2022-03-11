@@ -1,10 +1,10 @@
 import { createContext, PropsWithChildren } from "react";
 import { Recipe } from "types/Recipe";
+import { useContext } from "react";
+import useRecipeById from "hooks/useRecipeById";
 
 const RecipeContext = createContext<Recipe | null>(null);
 
-import { useContext } from "react";
-import useRecipeById from "hooks/useRecipeById";
 
 export const useRecipeContext = () => {
   return useContext(RecipeContext);

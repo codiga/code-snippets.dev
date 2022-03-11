@@ -1,36 +1,30 @@
-import { Box, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
-import RecipeSummary from "components/shared/recipe/RecipeSummary";
-import { RecipeProvider } from "contexts/RecipeProvider";
-import { Recipe } from "types/Recipe";
+import { Container } from "@chakra-ui/react";
+import { useSearchResultsContext } from "contexts/SearchResulstsProvider";
+import ResultsCards from "./ResultsCards";
+import ResultsFilters from "./ResultsFilters";
+import ResultsList from "./ResultsList";
+import ResultsEmpty from "./ResultsEmpty";
+import ResultsSkeleton from "./ResultsSkeleton";
 
-type ResultsProps = {
-  selected?: Recipe;
-  results?: Recipe[];
-  onSelect: (recipe: Recipe) => void;
-};
+const Results = () => {
+  const { view, loading, results } = useSearchResultsContext();
 
-const Results = ({ selected, results, onSelect }: ResultsProps) => {
-  const bg = useColorModeValue("brand.100", "brand.900");
+  if (!loading && !results?.length) {
+    return <ResultsEmpty />;
+  }
 
   return (
-    <Box
-      w={296}
-      bg={bg}
-      flexShrink={0}
-      d="flex"
-      overflow="auto"
-      flexDirection="column"
-    >
-      {results?.map((item) => (
-        <RecipeProvider key={item.id} id={item.id}>
-          <RecipeSummary
-            selected={selected?.id == item.id}
-            direction="column"
-            onClick={() => onSelect(item)}
-          />
-        </RecipeProvider>
-      ))}
-    </Box>
+    <Container maxW="container.xl" my={{ base: 6, md: 14 }}>
+      <ResultsFilters />
+
+      {loading ? (
+        <ResultsSkeleton />
+      ) : view === "cards" ? (
+        <ResultsCards />
+      ) : (
+        <ResultsList />
+      )}
+    </Container>
   );
 };
 

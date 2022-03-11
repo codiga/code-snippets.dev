@@ -17,22 +17,21 @@ import { css } from "@emotion/react";
 import NextLink from "next/link";
 import debounce from "lodash/debounce";
 import { getSnippetUrl } from "lib/snippets";
+import { getSingleQueryValue } from "hooks/useSearchQueryParams";
 
 const HOWMANY = 6;
 const SKIP = 0;
-// const ORDER_BY = RecipeSortingFields.Name;
-// const DESC = true;
 
 type SearchBoxProps = {
   autoFocus?: boolean;
   withQuery?: boolean;
 };
 
-const SearchBox = ({
+const SearchField = ({
   autoFocus = false,
   withQuery = false,
 }: SearchBoxProps) => {
-  const { push } = useRouter();
+  const { query, push } = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputItems, setInputItems] = useState<RecipeSummary[]>([]);
   const [error, setError] = useState(false);
@@ -90,6 +89,7 @@ const SearchBox = ({
   } = useCombobox({
     id: `search-box`,
     items: inputItems,
+    initialInputValue: getSingleQueryValue(query.q),
     itemToString: (item) => (item && item.name ? item.name : ""),
     onSelectedItemChange: ({ selectedItem }) => {
       if (selectedItem) {
@@ -98,6 +98,13 @@ const SearchBox = ({
     },
     onInputValueChange: debouncedInputChange,
   });
+
+  useEffect(() => {
+    if (autoFocus) {
+      inputRef.current?.focus();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSearch = () => {
     const query = `?q=${inputValue}`;
@@ -122,13 +129,6 @@ const SearchBox = ({
     reset();
     inputRef.current?.focus();
   };
-
-  useEffect(() => {
-    if (autoFocus) {
-      inputRef.current?.focus();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <Box pos="relative" maxW={590} mx="auto" flexGrow={2}>
@@ -225,6 +225,14 @@ const SearchBox = ({
       </Box>
     </Box>
   );
+};
+
+const SearchBox = (props: SearchBoxProps) => {
+  const { isReady } = useRouter();
+
+  if (!isReady) return null;
+
+  return <SearchField {...props} />;
 };
 
 export default SearchBox;

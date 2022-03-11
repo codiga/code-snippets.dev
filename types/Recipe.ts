@@ -3,12 +3,12 @@ import { Language } from "./Language";
 
 export type Recipe = {
   id: number;
+  language: Language;
   name?: string;
   description?: string;
   tags?: string[];
   code?: string;
   imports?: string[];
-  language?: Language;
   uses?: number;
   keywords?: string[];
   averageRating?: number;

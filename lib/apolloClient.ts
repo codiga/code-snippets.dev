@@ -1,17 +1,44 @@
 import { useMemo } from "react";
 import {
   ApolloClient,
+  FieldPolicy,
   HttpLink,
   InMemoryCache,
   NormalizedCacheObject,
+  Reference,
 } from "@apollo/client";
-import { concatPagination } from "@apollo/client/utilities";
 import merge from "deepmerge";
 import isEqual from "lodash/isEqual";
 
 export const APOLLO_STATE_PROP_NAME = "__APOLLO_STATE__";
 
 let apolloClient: ApolloClient<NormalizedCacheObject>;
+
+type KeyArgs = FieldPolicy<any>["keyArgs"];
+
+function skipLimitPagination<T = Reference>(
+  keyArgs: KeyArgs = false
+): FieldPolicy<T[]> {
+  return {
+    keyArgs,
+    merge(existing, incoming, { args }) {
+      const merged = existing ? existing.slice(0) : [];
+
+      if (args) {
+        // Assume an offset of 0 if args.offset omitted.
+        const { skip = 0 } = args;
+        for (let i = 0; i < incoming.length; ++i) {
+          merged[skip + i] = incoming[i];
+        }
+      } else {
+        // It's unusual (probably a mistake) for a paginated field not
+        // to receive any arguments
+        throw "no args provided to paginated field";
+      }
+      return merged;
+    },
+  };
+}
 
 function createApolloClient() {
   return new ApolloClient({
@@ -24,7 +51,7 @@ function createApolloClient() {
       typePolicies: {
         Query: {
           fields: {
-            allPosts: concatPagination(),
+            assistantRecipesSemanticSearch: skipLimitPagination(),
           },
         },
       },

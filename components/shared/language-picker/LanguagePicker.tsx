@@ -15,31 +15,17 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  SelectField,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { ALL_LANGUAGES, LANGUAGES } from "types/Language";
+import { Language, LANGUAGES_MAP } from "types/Language";
 import LanguagesList from "./LanguageList";
 
-function getOptions() {
-  const options: { label: string; value: string }[] = LANGUAGES.map((lang) => ({
-    label: lang,
-    value: lang,
-  }));
-  options.shift(); // remove unknown
-  options.pop(); // remove all langauges
-  options.push({ label: ALL_LANGUAGES, value: "" });
-  return options;
-}
-
 type LanguagePickerProps = {
-  value: string;
-  onChange: (value: string) => void;
+  value: Language | null;
+  onChange: (value: Language | null) => void;
 };
 
 const LanguagePicker = ({ value, onChange }: LanguagePickerProps) => {
-  const options = getOptions();
-  const selected = options.find((option) => option.value === value);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const openModal = () => setIsModalOpen(!isModalOpen);
@@ -47,17 +33,19 @@ const LanguagePicker = ({ value, onChange }: LanguagePickerProps) => {
   const openPopover = () => setIsPopoverOpen(!isPopoverOpen);
   const closePopover = () => setIsPopoverOpen(false);
 
-  const handlePick = (value: string) => {
+  const handlePick = (value: Language | null) => {
     onChange(value);
     closeModal();
     closePopover();
   };
 
+  const label = value ? LANGUAGES_MAP[value].label : "All languages";
+
   return (
     <>
       <Box d={{ base: "block", md: "none" }}>
         <Button onClick={openModal} size="sm" rightIcon={<ChevronDownIcon />}>
-          {selected?.label}
+          {label}
         </Button>
         <Modal isOpen={isModalOpen} onClose={closeModal} size="full">
           <ModalOverlay />
@@ -65,7 +53,7 @@ const LanguagePicker = ({ value, onChange }: LanguagePickerProps) => {
             <ModalHeader fontSize="md">Select a language!</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <LanguagesList options={options} selected={value} onChange={handlePick} />
+              <LanguagesList selected={value} onChange={handlePick} />
             </ModalBody>
           </ModalContent>
         </Modal>
@@ -78,7 +66,7 @@ const LanguagePicker = ({ value, onChange }: LanguagePickerProps) => {
               size="sm"
               rightIcon={<ChevronDownIcon />}
             >
-              {selected?.label}
+              {label}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -86,7 +74,7 @@ const LanguagePicker = ({ value, onChange }: LanguagePickerProps) => {
             <PopoverCloseButton />
             <PopoverHeader>Select a language!</PopoverHeader>
             <PopoverBody w="500px">
-              <LanguagesList options={options} selected={value} onChange={handlePick} />
+              <LanguagesList selected={value} onChange={handlePick} />
             </PopoverBody>
           </PopoverContent>
         </Popover>

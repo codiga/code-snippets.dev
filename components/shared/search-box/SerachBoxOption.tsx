@@ -1,5 +1,4 @@
 import { Box, HStack, Tag, Text, useColorModeValue } from "@chakra-ui/react";
-import { UNKNOWN_LANGUAGE } from "types/Language";
 import { RecipeSummary } from "types/Recipe";
 import ChartOutlineIcon from "../icons/ChartOutlineIcon";
 import StarOutlineIcon from "../icons/StarOutlineIcon";
@@ -31,7 +30,7 @@ const SearchBoxOption = ({
       bg={selected ? "brandBlue.100" : "transparent"}
     >
       <HStack as="h1" spacing={2}>
-        <LanguageIcon language={language || UNKNOWN_LANGUAGE} />
+        <LanguageIcon language={language} />
         <Text fontSize="sm">{name}</Text>
       </HStack>
       <HStack spacing={2}>

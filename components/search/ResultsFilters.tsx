@@ -1,25 +1,22 @@
-import { Box, ButtonGroup, HStack, IconButton, Select } from "@chakra-ui/react";
+import { Box, ButtonGroup, IconButton } from "@chakra-ui/react";
 import CardsIcon from "components/shared/icons/CardsIcon";
 import ListIcon from "components/shared/icons/ListIcon";
 import LanguagePicker from "components/shared/language-picker/LanguagePicker";
+import { useSearchResultsContext } from "contexts/SearchResulstsProvider";
 import { useRouter } from "next/router";
-import { useState } from "react";
-
-type View = "list" | "cards";
+import { Language } from "types/Language";
+import { View } from "types/Search";
 
 const ResultsFilters = () => {
   const { pathname, query, push } = useRouter();
-  const [list, setList] = useState<View>("list");
-  const [language, setLanguage] = useState("");
+
+  const { view, language } = useSearchResultsContext();
 
   const handleView = (value: View) => {
-    setList(value);
     push({ query: { ...query, view: value }, pathname });
   };
 
-  const handleLanguage = (value: string) => {
-    setLanguage(value);
-
+  const handleLanguage = (value: Language | null) => {
     if (value) {
       push({ query: { ...query, lang: value }, pathname });
     } else {
@@ -34,12 +31,12 @@ const ResultsFilters = () => {
       <ButtonGroup isAttached variant="outline" size="xs">
         <IconButton
           aria-label="List view"
-          icon={<ListIcon color={list === "list" ? "#23A9F2" : ""} />}
+          icon={<ListIcon color={view === "list" ? "#23A9F2" : ""} />}
           onClick={() => handleView("list")}
         />
         <IconButton
           aria-label="Cards view"
-          icon={<CardsIcon color={list === "cards" ? "#23A9F2" : ""} />}
+          icon={<CardsIcon color={view === "cards" ? "#23A9F2" : ""} />}
           onClick={() => handleView("cards")}
         />
       </ButtonGroup>

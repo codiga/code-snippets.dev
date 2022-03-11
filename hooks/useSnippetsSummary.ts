@@ -6,10 +6,10 @@ import {
 } from "types/Recipe";
 
 export default function useSnippetsSummary() {
-  const [fetchSnippetsSummary] = useLazyQuery<
-    GetPublicRecipesSummaryData,
-    GetPublicRecipesVariables
-  >(GET_PUBLIC_RECIPES_SUMMARY);
+  const [fetchSnippetsSummary] =
+    useLazyQuery<GetPublicRecipesSummaryData, GetPublicRecipesVariables>(
+      GET_PUBLIC_RECIPES_SUMMARY
+    );
 
   return fetchSnippetsSummary;
 }

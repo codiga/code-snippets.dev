@@ -1,17 +1,17 @@
 import { Box, List, ListItem } from "@chakra-ui/react";
-import {
-  Language,
-  UNKNOWN_LANGUAGE,
-} from "types/Language";
+import { Language, LANGUAGES, LANGUAGES_MAP } from "types/Language";
 import LanguageIcon from "../LanguageIcon";
 
 type LanguagesListProps = {
-  options: { label: string; value: string }[];
-  selected: string;
-  onChange: (value: string) => void;
+  selected: Language | null;
+  onChange: (value: Language | null) => void;
 };
 
-const LanguagesList = ({ options, selected, onChange }: LanguagesListProps) => {
+const OPTIONS = LANGUAGES.filter(
+  (lang) => !["Visual", "React", "Pascal"].includes(lang)
+);
+
+const LanguagesList = ({ selected, onChange }: LanguagesListProps) => {
   return (
     <List
       d="grid"
@@ -21,28 +21,44 @@ const LanguagesList = ({ options, selected, onChange }: LanguagesListProps) => {
       }}
       gap={3}
     >
-      {options.map(({ label, value }, index) => (
+      {OPTIONS.map((value, index) => (
         <ListItem
           key={index}
           onClick={() => onChange(value)}
           d="flex"
           alignItems="center"
           cursor="pointer"
-          borderRadius={4}
           p={1}
+          borderRadius={4}
           bg={value === selected ? "brandBlue.100" : "transparent"}
           _hover={{
             background: "brandBlue.100",
           }}
         >
           <Box as="span" w={8} h={8} d="inline-block" mr={3} flexShrink={0}>
-            <LanguageIcon language={(value as Language) || UNKNOWN_LANGUAGE} />
+            <LanguageIcon language={value} />
           </Box>
           <Box as="span" flexShrink={0}>
-            {label}
+            {LANGUAGES_MAP[value].label}
           </Box>
         </ListItem>
       ))}
+      <ListItem
+        onClick={() => onChange(null)}
+        d="flex"
+        alignItems="center"
+        cursor="pointer"
+        borderRadius={4}
+        p={1}
+        bg={selected ? "transparent" : "brandBlue.100"}
+        _hover={{
+          background: "brandBlue.100",
+        }}
+      >
+        <Box as="span" flexShrink={0}>
+          All languages
+        </Box>
+      </ListItem>
     </List>
   );
 };

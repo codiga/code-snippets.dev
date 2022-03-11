@@ -25,6 +25,7 @@
     "graphql": "^16.3.0",
     "lodash": "^4.17.21",
     "next": "12.1.0",
+    "perfect-scrollbar": "^1.5.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-select": "^5.2.2",
