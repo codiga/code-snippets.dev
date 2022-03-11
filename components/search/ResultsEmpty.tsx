@@ -6,7 +6,7 @@ const ResultsEmpty = () => {
 
   return (
     <Paper h="100%" d="flex" overflow="hidden">
-      <Box bg={bg}>🔎 No code snippets to match your criteria</Box>
+      <Box bg={bg} d="flex" flexGrow="2" justifyContent="center" alignItems="center">🔎 No code snippets to match your criteria</Box>
     </Paper>
   );
 };

@@ -13,7 +13,7 @@ export default function useSnippetsResults() {
   const { isReady } = useRouter();
 
   const { term, language, view } = useSearchQueryParams();
-  console.log({ term });
+
   const { data, loading, error, fetchMore } = useQuery<
     GetSemanticPublicRecipesData,
     GetPublicRecipesVariables
