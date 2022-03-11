@@ -28,7 +28,12 @@ const ResultsFilters = () => {
   return (
     <Box d="flex" justifyContent="space-between" alignItems="center" mb={3}>
       <LanguagePicker value={language} onChange={handleLanguage} />
-      <ButtonGroup isAttached variant="outline" size="xs">
+      <ButtonGroup
+        isAttached
+        variant="outline"
+        size="xs"
+        d={{ base: "none", md: "block" }}
+      >
         <IconButton
           aria-label="List view"
           icon={<ListIcon color={view === "list" ? "#23A9F2" : ""} />}

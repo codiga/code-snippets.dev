@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Card from "components/shared/Card";
 import Image from "next/image";
+import PageLayout from "components/layout/PageLayout";
 
 const Tools: NextPageWithLayout = () => {
   const borderColor = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
@@ -247,8 +248,10 @@ const Tools: NextPageWithLayout = () => {
           <Heading size="lg">Not seeing your tool?</Heading>
           <Text>
             Send us an email at{" "}
-            <Link href="mailto:contact@code-snippets.dev">code-snippets.io</Link> to add
-            your tool to the list!
+            <Link href="mailto:contact@code-snippets.dev">
+              code-snippets.io
+            </Link>{" "}
+            to add your tool to the list!
           </Text>
         </VStack>
       </Container>
@@ -257,7 +260,7 @@ const Tools: NextPageWithLayout = () => {
 };
 
 Tools.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <PageLayout>{page}</PageLayout>;
 };
 
 export default Tools;

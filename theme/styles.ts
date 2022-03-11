@@ -8,9 +8,9 @@ const styles = {
       flexDirection: "column",
     },
     "#__next main": {
-      display: "flex",
-      flex: "auto",
-      overflow: "auto",
+      // display: "flex",
+      // flex: "auto",
+      // overflow: "auto",
     },
     canvas: {
       position: "fixed",

@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "pages/_app";
-import Layout from "components/layout/Layout";
 import SearchResultsProvider from "contexts/SearchResulstsProvider";
 import Results from "components/search/Results";
+import StaticLayout from "components/layout/StaticLayout";
 
 const Search: NextPageWithLayout = () => {
   return (
@@ -13,11 +13,7 @@ const Search: NextPageWithLayout = () => {
 };
 
 Search.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <Layout search fullScreen>
-      {page}
-    </Layout>
-  );
+  return <StaticLayout search>{page}</StaticLayout>;
 };
 
 export default Search;

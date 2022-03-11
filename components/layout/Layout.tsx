@@ -2,23 +2,30 @@ import { Box } from "@chakra-ui/react";
 import Footer from "components/footer/Footer";
 import Header, { HeaderProps } from "components/header/Header";
 import { PropsWithChildren } from "react";
+import BaseLayout from "./BaseLayout";
 
 type LayoutProps = HeaderProps & {
-  fullScreen?: boolean;
+  forceFullScreen?: boolean;
 };
 
 const Layout = ({
   search = false,
-  fullScreen = false,
+  forceFullScreen = false,
   children,
 }: PropsWithChildren<LayoutProps>) => {
   return (
     <>
-      <Header search={search} />
-      <Box as="main" flexDir={fullScreen ? "row" : "column"}>
-        {children}
-      </Box>
-      <Footer />
+      <BaseLayout>
+        <Box
+          as="main"
+          d="flex"
+          flex={{ base: forceFullScreen ? "auto" : "none", md: "auto" }}
+          overflow="hidden"
+          flexDir="column"
+        >
+          <Box overflow={{ base: "auto", md: "auto" }}>{children}</Box>
+        </Box>
+      </BaseLayout>
     </>
   );
 };

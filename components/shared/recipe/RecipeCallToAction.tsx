@@ -9,7 +9,6 @@ const RecipeCallToAction = () => {
 
   return (
     <VStack
-      mt={4}
       p={4}
       zIndex={1}
       position="relative"
@@ -24,7 +23,7 @@ const RecipeCallToAction = () => {
       >
         Add Review on Codiga.io
       </Link>
-      <Text fontSize="xs">
+      <Text fontSize="xs" textAlign="center">
         Login on Codiga to add a comment on this recipe.
       </Text>
     </VStack>

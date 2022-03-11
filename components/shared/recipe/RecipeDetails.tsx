@@ -10,7 +10,6 @@ const RecipeDetails = () => {
     <Box maxW={340} bg={bg} flexShrink={0} d="flex" flexDirection="column">
       <RecipeSummary big link direction="column" />
       <RecipeComments />
-      <RecipeCallToAction />
     </Box>
   );
 };

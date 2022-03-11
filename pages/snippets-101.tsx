@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "pages/_app";
-import Layout from "components/layout/Layout";
 import PageTitle from "components/shared/PageTitle";
 import {
   Box,
@@ -13,6 +12,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import PageLayout from "components/layout/PageLayout";
 
 const Snippets: NextPageWithLayout = () => {
   return (
@@ -147,7 +147,7 @@ const Snippets: NextPageWithLayout = () => {
 };
 
 Snippets.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <PageLayout>{page}</PageLayout>;
 };
 
 export default Snippets;

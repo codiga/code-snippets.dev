@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "pages/_app";
-import Layout from "components/layout/Layout";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { addApolloState, initializeApollo } from "lib/apolloClient";
 import { GET_PUBLIC_RECIPE_BY_ID } from "queries/recipes";
@@ -10,6 +9,7 @@ import RecipeDetails from "components/shared/recipe/RecipeDetails";
 import RecipeCode from "components/shared/recipe/RecipeCode";
 import { RecipeProvider } from "contexts/RecipeProvider";
 import RecipeMetadata from "components/shared/recipe/RecipeMetadata";
+import StaticLayout from "components/layout/StaticLayout";
 
 type SnippetPath = {
   slug: string;
@@ -24,8 +24,13 @@ const Snippet: NextPageWithLayout<SnippetProps> = ({ id }) => {
   return (
     <RecipeProvider id={id}>
       <RecipeMetadata />
-      <Container maxW="container.xl" my={14}>
-        <Paper h="100%" d="flex" overflow="hidden">
+      <Container maxW="container.xl" my={{ base: 4, md: 14 }}>
+        <Paper
+          h="100%"
+          d="flex"
+          overflow="hidden"
+          flexDir={{ base: "column", md: "row" }}
+        >
           <RecipeDetails />
           <RecipeCode />
         </Paper>
@@ -35,7 +40,7 @@ const Snippet: NextPageWithLayout<SnippetProps> = ({ id }) => {
 };
 
 Snippet.getLayout = function getLayout(page: ReactElement) {
-  return <Layout fullScreen>{page}</Layout>;
+  return <StaticLayout>{page}</StaticLayout>;
 };
 
 export default Snippet;

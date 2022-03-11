@@ -1,4 +1,9 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  useBreakpointValue,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
 import Paper from "components/shared/Paper";
 import RecipeCode from "components/shared/recipe/RecipeCode";
 import RecipeDetails from "components/shared/recipe/RecipeDetails";
@@ -13,6 +18,7 @@ import InfiniteFetcher from "./InfiniteFetcher";
 const ResultsList = () => {
   const listRef = useRef<HTMLDivElement>(null);
   const bg = useColorModeValue("brand.100", "brand.900");
+  const sm = useBreakpointValue({ base: true, md: false });
 
   const [selected, setSelected] = useState<Recipe | null>(null);
   const { results, fetchMoreSnippets } = useSearchResultsContext();
@@ -28,6 +34,22 @@ const ResultsList = () => {
       new PerfectScrollbar(listRef.current);
     }
   }, []);
+
+  if (sm) {
+    return (
+      <VStack spacing={6} w="100%">
+        {results?.map((item) => (
+          <RecipeProvider key={item.id} id={item.id}>
+            <Paper w="100%" overflow="hidden">
+              <RecipeCode />
+              <RecipeDetails />
+            </Paper>
+          </RecipeProvider>
+        ))}
+        <InfiniteFetcher callback={fetchMoreSnippets} />
+      </VStack>
+    );
+  }
 
   return (
     <Paper h="100%" d="flex" overflow="hidden">

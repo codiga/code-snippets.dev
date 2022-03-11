@@ -1,4 +1,4 @@
-import Layout from "components/layout/Layout";
+import HomeLayout from "components/layout/HomeLayout";
 import PageTitle from "components/shared/PageTitle";
 import SearchBox from "components/shared/search-box/SearchBox";
 import { ReactElement } from "react";
@@ -13,7 +13,7 @@ const Home: NextPageWithLayout = () => {
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <HomeLayout>{page}</HomeLayout>;
 };
 
 export default Home;

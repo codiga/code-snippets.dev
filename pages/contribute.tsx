@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { NextPageWithLayout } from "pages/_app";
-import Layout from "components/layout/Layout";
 import PageTitle from "components/shared/PageTitle";
 import {
   Container,
@@ -12,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Card from "components/shared/Card";
 import Image from "next/image";
+import PageLayout from "components/layout/PageLayout";
 
 const Contribute: NextPageWithLayout = () => {
   return (
@@ -62,7 +62,7 @@ const Contribute: NextPageWithLayout = () => {
 };
 
 Contribute.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <PageLayout>{page}</PageLayout>;
 };
 
 export default Contribute;
