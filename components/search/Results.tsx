@@ -19,8 +19,6 @@ const Results = () => {
 
       {loading ? (
         <ResultsSkeleton />
-      ) : !results?.length ? (
-        <ResultsEmpty />
       ) : view === "cards" ? (
         <ResultsCards />
       ) : (
