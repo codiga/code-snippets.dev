@@ -7,11 +7,6 @@ const styles = {
       display: "flex",
       flexDirection: "column",
     },
-    "#__next main": {
-      // display: "flex",
-      // flex: "auto",
-      // overflow: "auto",
-    },
     canvas: {
       position: "fixed",
       zIndex: -2,

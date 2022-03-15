@@ -9,10 +9,12 @@ import { Provider as RollbarProvider, ErrorBoundary } from "@rollbar/react";
 import Script from "next/script";
 import theme from "theme";
 import Background from "components/shared/Background";
-import "styles/prism.css";
 import { GA_TRACKING_ID, pageview } from "lib/gtag";
 import { rollbarConfig } from "lib/rollbar";
 import GlobalMetadata from "components/shared/GlobalMetadata";
+
+import "styles/prism.css";
+import "styles/perfect-scrollbar.css";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

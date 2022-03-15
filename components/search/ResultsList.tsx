@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Spinner,
   Tab,
   TabList,
@@ -23,23 +24,25 @@ import InfiniteFetcher from "./InfiniteFetcher";
 
 const ResultsList = () => {
   const listRef = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
   const bg = useColorModeValue("brand.100", "brand.900");
-  const sm = useBreakpointValue({ base: true, md: false });
-
-  const [selected, setSelected] = useState<Recipe | null>(null);
-  const { loading, results, fetchMoreSnippets } = useSearchResultsContext();
+  const sm = useBreakpointValue({ base: true, md: false }, "md");
+  const { results, fetchMoreSnippets } = useSearchResultsContext();
 
   useEffect(() => {
-    if (results?.length) {
-      setSelected(results[0]);
-    }
-  }, [results]);
+    setIsReady(true);
+  }, []);
 
-  // useEffect(() => {
-  //   if (listRef.current) {
-  //     new PerfectScrollbar(listRef.current);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (isReady && listRef.current) {
+      (listRef.current.firstChild as HTMLElement)?.focus();
+    }
+  }, [isReady]);
+
+  const handleTabChange = (index: number) => {
+    setTabIndex(index);
+  };
 
   if (sm) {
     return (
@@ -59,7 +62,13 @@ const ResultsList = () => {
 
   return (
     <Paper h="100%" d="flex" overflow="hidden">
-      <Tabs w="100%" d="flex">
+      <Tabs
+        w="100%"
+        d="flex"
+        index={tabIndex}
+        onChange={handleTabChange}
+        orientation="vertical"
+      >
         <TabList
           ref={listRef}
           w={296}
@@ -70,18 +79,18 @@ const ResultsList = () => {
           flexDirection="column"
           border="none"
         >
-          {results?.map((item) => (
+          {results?.map((item, index) => (
             <Tab
               key={item.id}
-              onClick={() => setSelected(item)}
               d="block"
               p={0}
               color="inherit !important"
               border="none"
+              onFocus={(event) => event.target.scrollIntoView()}
             >
               <RecipeProvider id={item.id}>
                 <RecipeSummary
-                  selected={selected?.id == item.id}
+                  selected={tabIndex === index}
                   direction="column"
                 />
               </RecipeProvider>
@@ -92,43 +101,14 @@ const ResultsList = () => {
         <TabPanels>
           {results?.map((item) => (
             <TabPanel key={item.id} d="flex" p={0} h="100%">
-              {selected && (
-                <RecipeProvider id={selected.id}>
-                  <RecipeCode />
-                  <RecipeDetails />
-                </RecipeProvider>
-              )}
+              <RecipeProvider id={item.id}>
+                <RecipeCode />
+                <RecipeDetails />
+              </RecipeProvider>
             </TabPanel>
           ))}
         </TabPanels>
       </Tabs>
-      {/* <Box
-        ref={listRef}
-        w={296}
-        bg={bg}
-        flexShrink={0}
-        d="flex"
-        overflow="auto"
-        flexDirection="column"
-      >
-        
-        {results?.map((item) => (
-          <RecipeProvider key={item.id} id={item.id}>
-            <RecipeSummary
-              selected={selected?.id == item.id}
-              direction="column"
-              onClick={() => setSelected(item)}
-            />
-          </RecipeProvider>
-        ))}
-        <InfiniteFetcher callback={fetchMoreSnippets} />
-      </Box>
-      {selected && (
-        <RecipeProvider id={selected.id}>
-          <RecipeCode />
-          <RecipeDetails />
-        </RecipeProvider>
-      )} */}
     </Paper>
   );
 };
