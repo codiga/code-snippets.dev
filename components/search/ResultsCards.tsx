@@ -1,13 +1,12 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import RecipeCard from "components/shared/recipe/RecipeCard";
 import { RecipeProvider } from "contexts/RecipeProvider";
-import { Recipe } from "types/Recipe";
+import { useSearchResultsContext } from "contexts/SearchResulstsProvider";
+import InfiniteFetcher from "./InfiniteFetcher";
 
-type ResultsProps = {
-  results?: Recipe[];
-};
+const ResultsCards = () => {
+  const { results, fetchMoreSnippets } = useSearchResultsContext();
 
-const ResultsCards = ({ results }: ResultsProps) => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
       {results?.map((item) => (
@@ -15,6 +14,7 @@ const ResultsCards = ({ results }: ResultsProps) => {
           <RecipeCard />
         </RecipeProvider>
       ))}
+      <InfiniteFetcher callback={fetchMoreSnippets} />
     </SimpleGrid>
   );
 };

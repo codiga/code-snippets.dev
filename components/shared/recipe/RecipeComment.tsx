@@ -6,9 +6,10 @@ type RecipeCommentProps = {
   author: User | undefined;
   content: string | undefined;
   date: number | undefined;
+  rating: number | undefined;
 };
 
-const RecipeComment = ({ author, date, content }: RecipeCommentProps) => {
+const RecipeComment = ({ author, date, content, rating }: RecipeCommentProps) => {
   const name = `${author?.info?.firstname || ""} ${
     author?.info?.lastname || ""
   }`.trim();
@@ -23,6 +24,7 @@ const RecipeComment = ({ author, date, content }: RecipeCommentProps) => {
         avatar={avatar}
         name={author?.username || name || "Anonymous User"}
         date={date ? new Date(date)?.toLocaleString() : ""}
+        rating={rating || 0}
       />
       <Text fontSize="sm">{content}</Text>
     </VStack>

@@ -40,12 +40,13 @@ const RecipeComments = () => {
           px={4}
           overflow="auto"
         >
-          {comments?.map(({ id, author, comment, creationTimestampMs }) => (
+          {comments?.map(({ id, author, comment, creationTimestampMs, rating }) => (
             <RecipeComment
               key={id}
               author={author}
               date={creationTimestampMs}
               content={comment}
+              rating={rating}
             />
           ))}
         </VStack>

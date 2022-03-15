@@ -1,6 +1,11 @@
 import {
   Box,
   Spinner,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   useBreakpointValue,
   useColorModeValue,
   VStack,
@@ -30,11 +35,11 @@ const ResultsList = () => {
     }
   }, [results]);
 
-  useEffect(() => {
-    if (listRef.current) {
-      new PerfectScrollbar(listRef.current);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (listRef.current) {
+  //     new PerfectScrollbar(listRef.current);
+  //   }
+  // }, []);
 
   if (sm) {
     return (
@@ -54,7 +59,50 @@ const ResultsList = () => {
 
   return (
     <Paper h="100%" d="flex" overflow="hidden">
-      <Box
+      <Tabs w="100%" d="flex">
+        <TabList
+          ref={listRef}
+          w={296}
+          bg={bg}
+          flexShrink={0}
+          d="flex"
+          overflow="auto"
+          flexDirection="column"
+          border="none"
+        >
+          {results?.map((item) => (
+            <Tab
+              key={item.id}
+              onClick={() => setSelected(item)}
+              d="block"
+              p={0}
+              color="inherit !important"
+              border="none"
+            >
+              <RecipeProvider id={item.id}>
+                <RecipeSummary
+                  selected={selected?.id == item.id}
+                  direction="column"
+                />
+              </RecipeProvider>
+            </Tab>
+          ))}
+          <InfiniteFetcher callback={fetchMoreSnippets} />
+        </TabList>
+        <TabPanels>
+          {results?.map((item) => (
+            <TabPanel key={item.id} d="flex" p={0} h="100%">
+              {selected && (
+                <RecipeProvider id={selected.id}>
+                  <RecipeCode />
+                  <RecipeDetails />
+                </RecipeProvider>
+              )}
+            </TabPanel>
+          ))}
+        </TabPanels>
+      </Tabs>
+      {/* <Box
         ref={listRef}
         w={296}
         bg={bg}
@@ -63,6 +111,7 @@ const ResultsList = () => {
         overflow="auto"
         flexDirection="column"
       >
+        
         {results?.map((item) => (
           <RecipeProvider key={item.id} id={item.id}>
             <RecipeSummary
@@ -79,7 +128,7 @@ const ResultsList = () => {
           <RecipeCode />
           <RecipeDetails />
         </RecipeProvider>
-      )}
+      )} */}
     </Paper>
   );
 };

@@ -10,13 +10,18 @@ type UserRecipeById = {
   loading: boolean;
   error: ApolloError | undefined;
   recipe: Recipe | null;
+  skip?: boolean;
 };
 
-export default function useRecipeById(id: number): UserRecipeById {
+export default function useRecipeById(
+  id: number,
+  skip = false
+): UserRecipeById {
   const { data, loading, error } = useQuery<
     GetPublicRecipeData,
     GetPublicRecipeVariables
   >(GET_PUBLIC_RECIPE_BY_ID, {
+    skip,
     variables: { id, howmanycomments: 100, skipcomments: 0 },
   });
 

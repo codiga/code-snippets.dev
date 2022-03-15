@@ -12,7 +12,6 @@ type RecipeSummaryProps = {
   link?: boolean;
   selected?: boolean;
   direction?: "row" | "column";
-  onClick?: () => void;
 };
 
 const RecipeSummary = ({
@@ -20,7 +19,6 @@ const RecipeSummary = ({
   link = false,
   selected = false,
   direction = "row",
-  onClick = () => {},
 }: RecipeSummaryProps) => {
   const { id, keywords, description } = useRecipeContext() || {};
   const codigaRecipeUrl = getRecipeUrl({ id, keywords });
@@ -29,13 +27,12 @@ const RecipeSummary = ({
 
   return (
     <Box
+      p={4}
       d="flex"
       flexDirection={direction}
       justifyContent={row ? "space-between" : "flex-start"}
-      p={4}
       borderBottom="1px solid"
       borderBottomColor="whiteAlpha.200"
-      onClick={onClick}
       bg={selected ? "brandBlue.100" : "transparent"}
     >
       <RecipeTitle link={link} />
