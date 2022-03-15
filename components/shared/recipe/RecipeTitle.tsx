@@ -15,7 +15,7 @@ const RecipeTitle = ({ link = false }: RecipeTitleProps) => {
   if (!language) return null;
 
   if (link) {
-    const url = getSnippetUrl({ id, name });
+    const url = getSnippetUrl({ id, name, language });
 
     return (
       <h1>

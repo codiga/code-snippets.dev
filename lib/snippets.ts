@@ -16,16 +16,17 @@ export function getSnippetSlug(name: string | undefined, divider = "-") {
   return "";
 }
 
-export function getSnippetUrl({ id, name }: Partial<Recipe>) {
+export function getSnippetUrl({ id, name, language }: Partial<Recipe>) {
   const slug = getSnippetSlug(name);
+  const lang = language?.toLowerCase() || "unknown";
 
-  return `/snippet/${slug}/${id}`;
+  return `/snippet/${lang}}/${slug}/${id}`;
 }
 
 export function getRecipeUrl({ id, keywords }: Partial<Recipe>) {
   const divider = keywords && keywords.length > 0 ? `-` : "";
 
-  return `${process.env.NEXT_PUBLIC_CODIGA_URL}/hub/recipe/${id}${divider}${keywords?.join(
-    "-"
-  )}/view`;
+  return `${
+    process.env.NEXT_PUBLIC_CODIGA_URL
+  }/hub/recipe/${id}${divider}${keywords?.join("-")}/view`;
 }

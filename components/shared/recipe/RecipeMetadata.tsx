@@ -8,7 +8,7 @@ const RecipeMetadata = () => {
 
   const title = `Code Snippets: ${name}`;
   const metaDescription = `Code Snippet in ${language}: ${description}`;
-  const url = getSnippetUrl({ id, name });
+  const url = getSnippetUrl({ id, name, language });
 
   return (
     <Head>

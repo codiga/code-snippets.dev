@@ -1,13 +1,13 @@
 import { useColorMode } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
-import { getRecipeUrl, getSnippetUrl } from "lib/snippets";
+import {  getSnippetUrl } from "lib/snippets";
 
 export default function useShareUrls() {
-  const { language, id, name, keywords } = useRecipeContext() || {};
+  const { id, name, language } = useRecipeContext() || {};
   const { colorMode } = useColorMode();
 
   const shareUrlRoot = process.env.NEXT_PUBLIC_SITE_URL;
-  const url = getSnippetUrl({ id, name });
+  const url = getSnippetUrl({ id, name, language });
   const directShareValue = `${shareUrlRoot}${url}`;
   const badge = `${shareUrlRoot}/social/share-badge-${
     colorMode === "light" ? "white" : "black"

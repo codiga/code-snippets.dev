@@ -1,6 +1,6 @@
 import { getServerSideSitemap, ISitemapField } from "next-sitemap";
 import { GetServerSideProps } from "next";
-import { getSnippetSlug } from "lib/snippets";
+import { getSnippetSlug, getSnippetUrl } from "lib/snippets";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITEMAP_URL || "";
 const ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_API || "";
@@ -15,6 +15,7 @@ const assistantPublicDataQuery = (
   assistantPublicRecipes(howmany: ${howmanyRecipes}, skip: 0){
     id
     name
+    language
   }
 }
 `;
@@ -76,9 +77,9 @@ async function fetchPublicAssistantData(howmanyRecipes: number): Promise<{
 }
 
 function getRecipesPaths(recipes: { id: number; name: string }[]): string[] {
-  return recipes.map(({ id, name }) => {
-    const slug = getSnippetSlug(name);
-    return `${SITE_URL}/snippet/${slug}/${id}/`;
+  return recipes.map((recipe) => {
+    const url = getSnippetUrl(recipe);
+    return `${SITE_URL}${url}`;
   });
 }
 
