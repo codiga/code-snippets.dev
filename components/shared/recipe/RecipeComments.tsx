@@ -1,13 +1,21 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { Box, Heading, VStack } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
-import { useState } from "react";
+import PerfectScrollbar from "perfect-scrollbar";
+import { useEffect, useRef, useState } from "react";
 import RecipeCallToAction from "./RecipeCallToAction";
 import RecipeComment from "./RecipeComment";
 
 const RecipeComments = () => {
+  const commentsRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const { comments, commentsCount } = useRecipeContext() || {};
+
+  useEffect(() => {
+    if (commentsRef.current) {
+      new PerfectScrollbar(commentsRef.current);
+    }
+  }, []);
 
   return (
     <>
@@ -38,17 +46,21 @@ const RecipeComments = () => {
           alignItems="flex-start"
           spacing={8}
           px={4}
+          pos="relative"
           overflow="auto"
+          ref={commentsRef}
         >
-          {comments?.map(({ id, author, comment, creationTimestampMs, rating }) => (
-            <RecipeComment
-              key={id}
-              author={author}
-              date={creationTimestampMs}
-              content={comment}
-              rating={rating}
-            />
-          ))}
+          {comments?.map(
+            ({ id, author, comment, creationTimestampMs, rating }) => (
+              <RecipeComment
+                key={id}
+                author={author}
+                date={creationTimestampMs}
+                content={comment}
+                rating={rating}
+              />
+            )
+          )}
         </VStack>
         <RecipeCallToAction />
       </Box>

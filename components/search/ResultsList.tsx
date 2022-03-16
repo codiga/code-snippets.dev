@@ -36,6 +36,7 @@ const ResultsList = () => {
 
   useEffect(() => {
     if (isReady && listRef.current) {
+      new PerfectScrollbar(listRef.current);
       (listRef.current.firstChild as HTMLElement)?.focus();
     }
   }, [isReady]);
@@ -70,14 +71,16 @@ const ResultsList = () => {
         orientation="vertical"
       >
         <TabList
+          id="test"
           ref={listRef}
           w={296}
           bg={bg}
           flexShrink={0}
           d="flex"
-          overflow="auto"
+          overflow="hidden"
           flexDirection="column"
           border="none"
+          pos="relative"
         >
           {results?.map((item, index) => (
             <Tab

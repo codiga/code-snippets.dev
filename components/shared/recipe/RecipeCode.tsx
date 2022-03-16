@@ -2,16 +2,15 @@ import {
   Box,
   BoxProps,
   Button,
+  chakra,
   HStack,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
 import { decodeIndent } from "lib/decodeIndent";
 import Script from "next/script";
+import PerfectScrollbar from "perfect-scrollbar";
 import { useEffect, useRef, useState } from "react";
 import RecipeShare from "./RecipeShare";
 
@@ -20,6 +19,7 @@ type RecipeCodeProps = BoxProps & {
 };
 
 const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
+  const boxRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
   const { presentableFormat, language } = useRecipeContext() || {};
   const bg = useColorModeValue("white", "brand.500");
@@ -60,6 +60,10 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
     if ((window as any).Prism) {
       (window as any).Prism?.highlightAll();
     }
+
+    if (language && loaded && boxRef.current) {
+      new PerfectScrollbar(boxRef.current);
+    }
   }, [language, loaded]);
 
   if (!language) return null;
@@ -71,9 +75,15 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
       overflow={removeScroll ? "hidden" : "auto"}
       d="flex"
       justifyContent="flex-end"
+      pos="relative"
       {...props}
     >
-      <Box w="100%" pos="relative" overflow={removeScroll ? "hidden" : "auto"}>
+      <Box
+        ref={boxRef}
+        w="100%"
+        pos="relative"
+        overflow={removeScroll ? "hidden" : "auto"}
+      >
         <HStack
           mt={2}
           mx={4}
