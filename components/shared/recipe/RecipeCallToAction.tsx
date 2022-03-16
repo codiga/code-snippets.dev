@@ -1,11 +1,10 @@
 import { VStack, Link, Text } from "@chakra-ui/react";
 import { useRecipeContext } from "contexts/RecipeProvider";
-import useShareUrls from "hooks/useShareUrls";
-import { getRecipeUrl } from "lib/snippets";
+import { getRecipeCommentUrl } from "lib/snippets";
 
 const RecipeCallToAction = () => {
   const { id, keywords } = useRecipeContext() || {};
-  const codigaRecipeUrl = getRecipeUrl({ id, keywords });
+  const codigaRecipeUrl = getRecipeCommentUrl({ id, keywords });
 
   return (
     <VStack
