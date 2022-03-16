@@ -6,7 +6,8 @@
 </h3>
 
 <h1 align="center">
-  <img src="https://github.com/codiga/.github/blob/main/assets/Banner.png" width="80%" />
+  <img src="https://user-images.githubusercontent.com/99663873/158643342-3e12ca89-772e-4321-bb24-1f439da70e67.png" width="80%" />
+
 </h1>
 
 <h3 align="center">
