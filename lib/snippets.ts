@@ -20,7 +20,7 @@ export function getSnippetUrl({ id, name, language }: Partial<Recipe>) {
   const slug = getSnippetSlug(name);
   const lang = language?.toLowerCase() || "unknown";
 
-  return `/snippet/${lang}}/${slug}/${id}`;
+  return `/snippet/${lang}/${slug}/${id}`;
 }
 
 export function getRecipePath({ id, keywords }: Partial<Recipe>) {
