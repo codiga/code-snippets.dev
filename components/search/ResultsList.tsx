@@ -89,7 +89,7 @@ const ResultsList = () => {
               p={0}
               color="inherit !important"
               border="none"
-              onFocus={(event) => event.target.scrollIntoView()}
+              // onFocus={(event) => event.target.scrollIntoView()}
             >
               <RecipeProvider id={item.id}>
                 <RecipeSummary
