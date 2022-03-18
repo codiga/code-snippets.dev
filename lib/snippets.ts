@@ -36,5 +36,5 @@ export function getRecipeUrl({ id, keywords }: Partial<Recipe>) {
 
 export function getRecipeCommentUrl({ id, keywords }: Partial<Recipe>) {
   const path = getRecipePath({ id, keywords });
-  return `${process.env.NEXT_PUBLIC_CODIGA_URL}/login?next=${path}`;
+  return `${process.env.NEXT_PUBLIC_CODIGA_URL}/login?next=${path}?focusReview=true`;
 }
