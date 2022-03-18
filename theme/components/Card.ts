@@ -6,7 +6,7 @@ const outlineVariant: SystemStyleFunction = (props) => {
     position: "relative",
     border: "1px solid",
     borderColor: mode("blackAlpha.200", "#06041A")(props),
-    backgroundColor: mode("white", "transparent")(props),
+    backgroundColor: mode("white", "#0B091C")(props),
   };
 };
 

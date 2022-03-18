@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import { NextPageWithLayout } from "pages/_app";
 import PageTitle from "components/shared/PageTitle";
 import {
+  Box,
   Container,
   Heading,
   Link,
@@ -18,43 +19,283 @@ const Contribute: NextPageWithLayout = () => {
     <>
       <PageTitle
         title="Contribute"
-        copy="All code snipped listed are curated recipes taken from Codiga API. To contribute and upload recipes follow these steps"
+        copy="Save your recipes and contribute to the community."
       />
       <Container maxW="container.xl">
-        <VStack spacing={8} pos="relative" zIndex={1}>
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={8}>
-            <Card spacing={4}>
-              <Image
-                alt="Codiga platform"
-                width={295}
-                height={222}
-                src="/contirbute/codiga-platform.svg"
-              />
-              <Heading as="h2" size="md">
-                1. Go to Codiga.io platform
-              </Heading>
-              <Text fontSize="xl">
-                Sign in with your Github, GitLab or Bitbucket account.
-              </Text>
-            </Card>
-            <Card spacing={4}>
-              <Image
-                alt="Codiga platform"
-                width={295}
-                height={222}
-                src="/contirbute/code-snippet.svg"
-              />
-              <Heading as="h2" size="md">
-                2. Upload your code snippets
-              </Heading>
-              <Text fontSize="xl">
-                Create your own code snippets (Recipes) and start sharing.
-              </Text>
-            </Card>
-          </SimpleGrid>
-          <Link href="https://app.codiga.io/" variant="gradient">
-            Contribute in Codiga.io
-          </Link>
+        <VStack spacing={{ base: 14, md: 20 }} pos="relative" zIndex={1}>
+          <VStack spacing={7} alignItems={{ base: "center", md: "flex-start" }}>
+            <Heading size="md" d="flex" alignItems="center">
+              <Box mr={2}>
+                <Image
+                  alt="vscode logo"
+                  src="/tools/vscode-logo.svg"
+                  width={32}
+                  height={32}
+                />
+              </Box>
+              VS Code
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  1. Get the VS Code plugin
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/vscode/get-vscode-plugin.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Install the{" "}
+                  <Link href="https://marketplace.visualstudio.com/items?itemName=codiga.vscode-plugin">
+                    Codiga plugin for VS Code
+                  </Link>
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  2. Write your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/vscode/write-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Create and save the code snippet of the language of your
+                  preference.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  3. Save your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/vscode/save-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Select your snippet, right clic and select Create Codiga
+                  Recipe
+                </Text>
+              </Card>
+            </SimpleGrid>
+          </VStack>
+          <VStack spacing={7} alignItems={{ base: "center", md: "flex-start" }}>
+            <Heading size="md" d="flex" alignItems="center">
+              <Box mr={2}>
+                <Image
+                  alt="vscode logo"
+                  src="/tools/jetbrains-logo.svg"
+                  width={32}
+                  height={32}
+                />
+              </Box>
+              JetBrains
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  1. Get the JetBrains plugin
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/jetbrains/get-jetbrains-plugin.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Install the{" "}
+                  <Link href="https://plugins.jetbrains.com/plugin/17969-codiga">
+                    Codiga plugin
+                  </Link>{" "}
+                  available for JetBrains tools.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  2. Write your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/jetbrains/write-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Create the code snippet of the language of your preference.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  3. Save your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/jetbrains/save-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Select your snippet, right clic and select Create Codiga
+                  Recipe
+                </Text>
+              </Card>
+            </SimpleGrid>
+          </VStack>
+          <VStack spacing={7} alignItems={{ base: "center", md: "flex-start" }}>
+            <Heading size="md" d="flex" alignItems="center">
+              <Box mr={2}>
+                <Image
+                  alt="browser icon"
+                  src="/logos/browser-logo.svg"
+                  width={32}
+                  height={32}
+                />
+              </Box>
+              Browser
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  1. Go to Codiga.io platform
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/browser/codiga-app-login.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  <Link href="https://app.codiga.io/">Sign in</Link> with your
+                  Github, GitLab or Bitbucket account.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  2. Write your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/browser/write-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Create the code snippet of the language of your preference.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  3. Save your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/browser/save-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Click save to upload your code snippet.
+                </Text>
+              </Card>
+            </SimpleGrid>
+          </VStack>
+          <VStack spacing={7} alignItems={{ base: "center", md: "flex-start" }}>
+            <Heading size="md" d="flex" alignItems="center">
+              <Box mr={2}>
+                <Image
+                  alt="chrome logo"
+                  src="/logos/chrome-logo.svg"
+                  width={32}
+                  height={32}
+                />
+              </Box>
+              Chrome
+            </Heading>
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  1. Get the Chrome plugin
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/chrome/get-chrome-extension.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Install the{" "}
+                  <Link href="https://chrome.google.com/webstore/detail/codiga/dbkhkhonmelajjempmoadocgneoadjge">
+                    Codiga plugin
+                  </Link>{" "}
+                  available for Chrome
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  2. Select your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/chrome/select-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Select the code snippet for the language of your preference.
+                </Text>
+              </Card>
+              <Card spacing={4}>
+                <Heading as="h2" size="md">
+                  3. Save your code snippet
+                </Heading>
+                <Box>
+                  <Image
+                    alt="Codiga platform"
+                    width={280}
+                    height={200}
+                    src="/contirbute/chrome/save-your-code-snippet.svg"
+                  />
+                </Box>
+                <Text fontSize="md" textAlign="center">
+                  Clic = Recipe button, or right clic and select Create Codiga
+                  Recipe.
+                </Text>
+              </Card>
+            </SimpleGrid>
+          </VStack>
+          <Box pb={{ base: 14, md: 20 }}>
+            <Link href="https://app.codiga.io/" variant="gradient">
+              Contribute in Codiga.io
+            </Link>
+          </Box>
         </VStack>
       </Container>
     </>
