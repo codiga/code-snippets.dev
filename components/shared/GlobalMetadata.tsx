@@ -63,11 +63,7 @@ const GlobalMetadata = () => {
         content="/social/open-graph.png"
       />
       <meta key="ogtype" property="og:type" content="website" />
-      <meta
-        key="ogurl"
-        property="og:url"
-        content="https://code-snippets.dev/"
-      />
+      <meta key="ogurl" property="og:url" content="https://www.snipt.dev/" />
       <meta key="oglocale" property="og:locale" content="en_US" />
 
       <meta
@@ -86,7 +82,7 @@ const GlobalMetadata = () => {
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://code-snippets.dev/social/open-graph.png"
+        content="https://www.snipt.dev/social/open-graph.png"
       />
     </Head>
   );

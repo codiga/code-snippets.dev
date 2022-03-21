@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.code-snippets.dev
+Host: https://www.www.snipt.dev
 
 # Sitemaps
-Sitemap: https://www.code-snippets.dev/sitemap.xml
+Sitemap: https://www.www.snipt.dev/sitemap.xml

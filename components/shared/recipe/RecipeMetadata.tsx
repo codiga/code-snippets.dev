@@ -43,20 +43,9 @@ const RecipeMetadata = () => {
         name="twitter:card"
         content="summary_large_image"
       />
-      <meta
-        name="twitter:site"
-        content="@getcodiga"
-      />
-      <meta
-        key="twitterCreator"
-        name="twitter:creator"
-        content="@getcodiga"
-      />
-      <meta
-        key="twitterTitle"
-        name="twitter:title"
-        content="Code Snippets"
-      />
+      <meta name="twitter:site" content="@getcodiga" />
+      <meta key="twitterCreator" name="twitter:creator" content="@getcodiga" />
+      <meta key="twitterTitle" name="twitter:title" content="Code Snippets" />
       <meta
         key="twitterDescription"
         name="twitter:description"
@@ -65,7 +54,7 @@ const RecipeMetadata = () => {
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://code-snippets.dev/social/open-graph-snippets.png"
+        content="https://www.snipt.dev/social/open-graph-snippets.png"
       />
     </Head>
   );
