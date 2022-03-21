@@ -11,7 +11,7 @@
 </h1>
 
 <h3 align="center">
-🎉 Welcome to Code-snippets.dev 🎉
+🎉 Welcome to snipt.dev 🎉
 </h3>
 
 <div align="center">
@@ -31,7 +31,7 @@
 
 
 ### What is it?
-This repository is for our [Code-snippets.dev](https://www.code-snippets.dev/).Code snippets are code blocks you can share and reuse yourself. By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
+This repository is for our [snipt.dev](https://www.snipt.dev/).Code snippets are code blocks you can share and reuse yourself. By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
 
 ### Why Code Snippets are important?
 
@@ -68,6 +68,6 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 ---
 
 ### Contributions
-- Found any bug, please create a new [issue](https://github.com/codiga/code-snippets.io/issues) before working on the solution.
+- Found any bug, please create a new [issue](https://github.com/codiga/snipt.dev/issues) before working on the solution.
 
 
