@@ -18,7 +18,7 @@ const Contribute: NextPageWithLayout = () => {
   return (
     <>
       <PageTitle
-        title="Contribute"
+        title="Snipt - Contribute"
         copy="Save your recipes and contribute to the community."
       />
       <Container maxW="container.xl">
@@ -88,8 +88,8 @@ const Contribute: NextPageWithLayout = () => {
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
-                  Select your snippet, right clic and select Create Codiga
-                  Recipe
+                  Select your snippet, right click and select Create Codiga
+                  Recipe menu option.
                 </Text>
               </Card>
             </SimpleGrid>
@@ -156,7 +156,7 @@ const Contribute: NextPageWithLayout = () => {
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
-                  Select your snippet, right clic and select Create Codiga
+                  Select your snippet, right click and select Create Codiga
                   Recipe
                 </Text>
               </Card>
@@ -288,8 +288,8 @@ const Contribute: NextPageWithLayout = () => {
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
-                  Clic = Recipe button, or right clic and select Create Codiga
-                  Recipe.
+                  Clic on the Create Recipe button, or right-click and select
+                  Create Codiga Recipe.
                 </Text>
               </Card>
             </SimpleGrid>
