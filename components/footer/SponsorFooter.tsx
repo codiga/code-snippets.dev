@@ -5,7 +5,7 @@ const SponsorFooter = () => {
   return (
     <HStack spacing={2}>
       <Text fontSize="xs">Made with ❤️ by</Text>
-      <a href="https://app.codiga.io/">
+      <a href="https://www.codiga.io/">
         <CodigaLogo />
       </a>
     </HStack>
