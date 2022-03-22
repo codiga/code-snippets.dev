@@ -1,12 +1,10 @@
 <!-- markdownlint-disable-next-line -->
 <h3 align="center">
 
-
-
 </h3>
 
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/99663873/158643342-3e12ca89-772e-4321-bb24-1f439da70e67.png" width="80%" />
+  <img src="hero.png" width="80%" />
 
 </h1>
 
@@ -28,19 +26,20 @@
 
 ---
 
-
-
 ### What is it?
-This repository is for our [snipt.dev](https://www.snipt.dev/).Code snippets are code blocks you can share and reuse yourself. By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
+
+This repository is for our [snipt.dev](https://www.snipt.dev/) website, a Code Snippets search engine. Code Snippets are code blocks you can share and reuse.
+By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
 
 ### Why Code Snippets are important?
 
 When using code snippets for yourself, you make sure you define code once and reuse it correctly in other codebases. It guarantees you are not missing an argument or an error case.When sharing code snippets in a team, it ensures that the team is using the same code consistently. By having a library of code snippets shared with your team, you ensure that your team is always using safe, vetted code patterns in all your code base.
 
 ### How to use a snippet in your IDE?
-As for sharing, it all depend on the editor. VS Code lets you type an abbreviation to reuse a code snippet and JetBrains live template lets you reuse code blocks in their IDE. Codiga snippets manager lets you search and import code snippets using their Coding Assistant function that is triggered using ⌘ + SHIFT + C [Mac] or CTRL + ALT + C [Windows] on VS Code or ⌘/CTRL + ALT + C  in JetBrains. You can learn more about the Codiga snippet manager in the tool section.
 
---- 
+As for sharing, it all depend on the editor. VS Code lets you type an abbreviation to reuse a code snippet and JetBrains live template lets you reuse code blocks in their IDE. Codiga snippets manager lets you search and import code snippets using their Coding Assistant function that is triggered using ⌘ + SHIFT + C [Mac] or CTRL + ALT + C [Windows] on VS Code or ⌘/CTRL + ALT + C in JetBrains. You can learn more about the Codiga snippet manager in the tool section.
+
+---
 
 ### How we made this?
 
@@ -64,10 +63,8 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-
 ---
 
 ### Contributions
+
 - Found any bug, please create a new [issue](https://github.com/codiga/snipt.dev/issues) before working on the solution.
-
-
