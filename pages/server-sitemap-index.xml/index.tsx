@@ -1,6 +1,6 @@
 import { getServerSideSitemap, ISitemapField } from "next-sitemap";
 import { GetServerSideProps } from "next";
-import { getSnippetSlug, getSnippetUrl } from "lib/snippets";
+import { getSnippetUrl } from "lib/snippets";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITEMAP_URL || "";
 const ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_API || "";

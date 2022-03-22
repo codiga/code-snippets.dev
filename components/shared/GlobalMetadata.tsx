@@ -3,7 +3,7 @@ import Head from "next/head";
 const GlobalMetadata = () => {
   return (
     <Head>
-      <title>Code Snippets</title>
+      <title>Snipt: Code Snippets Search Engine</title>
       <meta
         key="charset"
         httpEquiv="content-type"
