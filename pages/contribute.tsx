@@ -45,7 +45,8 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/vscode/get-vscode-plugin.svg"
+                    quality={100}
+                    src="/contirbute/vscode/get-vscode-plugin.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -64,7 +65,8 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/vscode/write-your-code-snippet.svg"
+                    quality={100}
+                    src="/contirbute/vscode/write-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -81,7 +83,8 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/vscode/save-your-code-snippet.svg"
+                    quality={100}
+                    src="/contirbute/vscode/save-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -113,7 +116,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/jetbrains/get-jetbrains-plugin.svg"
+                    src="/contirbute/jetbrains/get-jetbrains-plugin.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -133,7 +136,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/jetbrains/write-your-code-snippet.svg"
+                    src="/contirbute/jetbrains/write-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -149,7 +152,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/jetbrains/save-your-code-snippet.svg"
+                    src="/contirbute/jetbrains/save-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -181,7 +184,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/browser/codiga-app-login.svg"
+                    src="/contirbute/browser/codiga-app-login.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -198,7 +201,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/browser/write-your-code-snippet.svg"
+                    src="/contirbute/browser/write-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -214,7 +217,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/browser/save-your-code-snippet.svg"
+                    src="/contirbute/browser/save-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -245,7 +248,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/chrome/get-chrome-extension.svg"
+                    src="/contirbute/chrome/get-chrome-extension.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -265,7 +268,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/chrome/select-your-code-snippet.svg"
+                    src="/contirbute/chrome/select-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
@@ -281,7 +284,7 @@ const Contribute: NextPageWithLayout = () => {
                     alt="Codiga platform"
                     width={280}
                     height={200}
-                    src="/contirbute/chrome/save-your-code-snippet.svg"
+                    src="/contirbute/chrome/save-your-code-snippet.png"
                   />
                 </Box>
                 <Text fontSize="md" textAlign="center">
