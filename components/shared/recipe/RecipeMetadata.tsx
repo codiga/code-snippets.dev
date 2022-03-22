@@ -6,8 +6,9 @@ const RecipeMetadata = () => {
   const { id, name, description, language, keywords } =
     useRecipeContext() || {};
 
-  const title = `Code Snippets: ${name}`;
+  const title = `Snipt - Code Snippet - ${name}`;
   const metaDescription = `Code Snippet in ${language}: ${description}`;
+  const openGraphDescription = `${language}: ${name}`;
   const url = getSnippetUrl({ id, name, language });
 
   return (
@@ -23,11 +24,15 @@ const RecipeMetadata = () => {
         )}`}
       />
 
-      <meta key="ogtitle" property="og:title" content="Code Snippets" />
+      <meta
+        key="ogtitle"
+        property="og:title"
+        content="Snipt: Code Snippet Search Engine"
+      />
       <meta
         key="ogdescription"
         property="og:description"
-        content={metaDescription}
+        content={openGraphDescription}
       />
       <meta
         key="ogimage"
@@ -45,11 +50,15 @@ const RecipeMetadata = () => {
       />
       <meta name="twitter:site" content="@getcodiga" />
       <meta key="twitterCreator" name="twitter:creator" content="@getcodiga" />
-      <meta key="twitterTitle" name="twitter:title" content="Code Snippets" />
+      <meta
+        key="twitterTitle"
+        name="twitter:title"
+        content="Snipt: Code Snippet Search Engine"
+      />
       <meta
         key="twitterDescription"
         name="twitter:description"
-        content={metaDescription}
+        content={openGraphDescription}
       />
       <meta
         key="twitterImage"
