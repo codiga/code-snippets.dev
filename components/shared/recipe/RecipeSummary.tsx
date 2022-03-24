@@ -38,7 +38,6 @@ const RecipeSummary = ({
       <RecipeTitle link={link} />
 
       <Box d="flex" flexDirection={direction}>
-        <RecipeStats mt={row ? 0 : 4} />
         <RecipeTags mt={row ? 0 : 4} />
       </Box>
       {big && (
