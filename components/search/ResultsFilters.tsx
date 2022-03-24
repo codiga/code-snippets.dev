@@ -1,4 +1,4 @@
-import { Box, ButtonGroup, IconButton } from "@chakra-ui/react";
+import { Box, ButtonGroup, IconButton, Text } from "@chakra-ui/react";
 import CardsIcon from "components/shared/icons/CardsIcon";
 import ListIcon from "components/shared/icons/ListIcon";
 import LanguagePicker from "components/shared/language-picker/LanguagePicker";
@@ -27,7 +27,12 @@ const ResultsFilters = () => {
 
   return (
     <Box d="flex" justifyContent="space-between" alignItems="center" mb={3}>
-      <LanguagePicker value={language} onChange={handleLanguage} />
+      <Box d="flex" gap={4} alignItems="center">
+        <LanguagePicker value={language} onChange={handleLanguage} />
+        {view === "list" && (
+          <Text fontSize="sm">&uarr;&darr; Use arrows to navigate</Text>
+        )}
+      </Box>
       <ButtonGroup
         isAttached
         variant="outline"
