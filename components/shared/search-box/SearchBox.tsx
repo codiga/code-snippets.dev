@@ -19,16 +19,17 @@ import debounce from "lodash/debounce";
 import { getSnippetUrl } from "lib/snippets";
 import { getSingleQueryValue } from "hooks/useSearchQueryParams";
 import NoSsr from "../NoSsr";
+import useSearchAnimation from "hooks/useSearchAnimation";
 
 /**
  * if you need to update HOWMANY please consider the following:
  * ApolloCache uses the query arguments as keys to store the data
  * if you set it to 10 it will collide with the results list cache
  * https://github.com/codiga/code-snippets.io/blob/main/hooks/useSnippetsResults.ts#L10
- * 
+ *
  * until we find a better way to handle this be mindful about it!
- * 
- * */ 
+ *
+ * */
 const HOWMANY = 6;
 const SKIP = 0;
 
@@ -52,6 +53,8 @@ const SearchField = ({
   const loader = useColorModeValue("#718096", "white");
   const inputBg = useColorModeValue("white", "#21252B");
   const iconColor = useColorModeValue("gray.500", "white");
+
+  const placeholder = useSearchAnimation();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedInputChange = useCallback(
@@ -154,6 +157,7 @@ const SearchField = ({
           borderRadius={4}
           border="none"
           shadow="base"
+          placeholder={placeholder}
           {...getInputProps({
             ref: inputRef,
             onKeyDown: handleEnter,
