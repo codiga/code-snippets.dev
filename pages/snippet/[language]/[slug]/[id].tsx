@@ -10,6 +10,7 @@ import RecipeCode from "components/shared/recipe/RecipeCode";
 import { RecipeProvider } from "contexts/RecipeProvider";
 import RecipeMetadata from "components/shared/recipe/RecipeMetadata";
 import StaticLayout from "components/layout/StaticLayout";
+import RecipeCallToAction from "components/shared/recipe/RecipeCallToAction";
 
 type SnippetPath = {
   slug: string;
@@ -33,6 +34,7 @@ const Snippet: NextPageWithLayout<SnippetProps> = ({ id }) => {
         >
           <RecipeDetails />
           <RecipeCode />
+          <RecipeCallToAction d={{ base: "flex", md: "none" }} />
         </Paper>
       </Container>
     </RecipeProvider>
@@ -40,7 +42,7 @@ const Snippet: NextPageWithLayout<SnippetProps> = ({ id }) => {
 };
 
 Snippet.getLayout = function getLayout(page: ReactElement) {
-  return <StaticLayout>{page}</StaticLayout>;
+  return <StaticLayout search>{page}</StaticLayout>;
 };
 
 export default Snippet;

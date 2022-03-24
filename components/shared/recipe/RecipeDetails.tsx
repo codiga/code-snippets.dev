@@ -12,10 +12,18 @@ const RecipeDetails = () => {
       bg={bg}
       flexShrink={0}
       d="flex"
+      zIndex={1}
       flexDirection="column"
+      position="relative"
+      overflow="auto"
     >
       <RecipeSummary big link direction="column" />
       <RecipeComments />
+      <RecipeCallToAction
+        d={{ base: "none", md: "flex" }}
+        bottom={0}
+        position="sticky"
+      />
     </Box>
   );
 };

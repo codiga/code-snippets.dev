@@ -37,9 +37,7 @@ const RecipeComments = () => {
       </Heading>
       <Box
         d={{ base: isVisible ? "flex" : "none", md: "flex" }}
-        flex="auto"
         flexDir="column"
-        overflow="hidden"
       >
         <VStack
           w="100%"
@@ -47,7 +45,6 @@ const RecipeComments = () => {
           spacing={8}
           px={4}
           pos="relative"
-          overflow="auto"
           ref={commentsRef}
         >
           {comments?.map(
@@ -62,7 +59,6 @@ const RecipeComments = () => {
             )
           )}
         </VStack>
-        <RecipeCallToAction />
       </Box>
     </>
   );

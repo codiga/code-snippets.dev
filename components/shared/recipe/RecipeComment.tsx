@@ -19,7 +19,7 @@ const RecipeComment = ({ author, date, content, rating }: RecipeCommentProps) =>
     : "";
 
   return (
-    <VStack spacing={4} alignItems="flex-start">
+    <VStack w="100%" spacing={4} alignItems="flex-start">
       <CommentAuthor
         avatar={avatar}
         name={author?.username || name || "Anonymous User"}
