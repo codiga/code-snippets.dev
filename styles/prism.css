@@ -19,8 +19,8 @@ pre[class*="language-"] {
   hyphens: none;
 }
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 0 1em;
+  margin: 0;
   overflow: auto;
 }
 :not(pre) > code[class*="language-"],
@@ -124,7 +124,7 @@ pre[class*="language-"].line-numbers > code {
   left: -3.8em;
   width: 3em;
   letter-spacing: -1px;
-  border-right: 1px solid #999;
+  /* border-right: 1px solid #999; */
   background-color: #202124;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -141,4 +141,13 @@ pre[class*="language-"].line-numbers > code {
   display: block;
   padding-right: 0.8em;
   text-align: right;
+}
+
+.chakra-ui-light :not(pre) > code[class*="language-"],
+.chakra-ui-light pre[class*="language-"] {
+  background: white;
+}
+
+.chakra-ui-light .line-numbers .line-numbers-rows {
+  background-color: #e9e9e9;
 }

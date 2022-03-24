@@ -23,6 +23,7 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
   const [loaded, setLoaded] = useState(false);
   const { presentableFormat, language } = useRecipeContext() || {};
   const bg = useColorModeValue("white", "brand.500");
+  const shadow = useColorModeValue("#e9e9e9", "#202124");
   const toast = useToast();
 
   const decoded = decodeIndent(presentableFormat);
@@ -82,6 +83,7 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
         ref={boxRef}
         w="100%"
         pos="relative"
+        boxShadow={`inset 48px 0px 0px 0px ${shadow}`}
         overflow={removeScroll ? "hidden" : "auto"}
       >
         <HStack
@@ -98,8 +100,15 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
             Copy Snippet
           </Button>
         </HStack>
-        <Box as="pre" w="100%" overflow={removeScroll ? "hidden" : "auto"}>
-          <code className={`lang-${language?.toLowerCase()}`}>{decoded}</code>
+        <Box
+          as="pre"
+          w="100%"
+          boxShadow={`inset 48px 0px 0px 0px ${shadow}`}
+          overflow={removeScroll ? "hidden" : "auto"}
+        >
+          <code className={`line-numbers lang-${language?.toLowerCase()}`}>
+            {decoded}
+          </code>
         </Box>
       </Box>
       <Script src="/prism.js" onLoad={handleLoad} />
