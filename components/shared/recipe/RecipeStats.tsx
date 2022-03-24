@@ -6,6 +6,10 @@ import StarOutlineIcon from "../icons/StarOutlineIcon";
 const RecipeStats = (props: StackProps) => {
   const { uses, averageRating } = useRecipeContext() || {};
 
+  if ((!uses || uses === 0) && (!averageRating || averageRating === 0)) {
+    return null;
+  }
+
   return (
     <HStack spacing={2} {...props}>
       <ChartOutlineIcon />

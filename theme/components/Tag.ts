@@ -4,7 +4,7 @@ const snippetVariant: SystemStyleFunction = (props) => {
   return {
     container: {
       border: "1px solid",
-      borderRadius: "100px",
+      borderRadius: "4px",
       borderColor: mode("#EFF1F5", "white")(props),
       backgroundColor: mode("#EFF1F5", "transparent")(props),
       padding: "4px 8px",

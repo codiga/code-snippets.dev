@@ -30,9 +30,9 @@ const RecipeTitle = ({ link = false }: RecipeTitleProps) => {
   }
 
   return (
-    <HStack as="h1" spacing={2}>
+    <HStack as="h1" spacing={2} justifyContent="flex-start">
       <LanguageIcon language={language} />
-      <Text fontSize="sm">{name}</Text>
+      <Text fontSize="sm" textAlign="left">{name}</Text>
     </HStack>
   );
 };
