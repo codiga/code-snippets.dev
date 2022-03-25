@@ -19,7 +19,7 @@ type RecipeCodeProps = BoxProps & {
 };
 
 const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
-  const boxRef = useRef<HTMLDivElement>(null);
+  const boxRef = useRef<HTMLPreElement | null>(null);
   const [loaded, setLoaded] = useState(false);
   const { presentableFormat, language } = useRecipeContext() || {};
   const bg = useColorModeValue("white", "brand.500");
@@ -67,50 +67,53 @@ const RecipeCode = ({ removeScroll = false, ...props }: RecipeCodeProps) => {
     }
   }, [language, loaded]);
 
-  if (!language) return null;
+  if (!language) return <Box w="100%" bg={bg} />;
 
   return (
     <Box
-      w="100%"
       bg={bg}
-      overflow={removeScroll ? "hidden" : "auto"}
-      d="flex"
-      justifyContent="flex-end"
+      w="100%"
+      minH="190px"
+      overflow="hidden"
       pos="relative"
       {...props}
     >
-      <Box
-        ref={boxRef}
+      <HStack
+        mt={2}
+        mx={4}
+        spacing={2}
+        justifyContent="flex-end"
+        top={2}
+        position="sticky"
+        zIndex={1}
+      >
+        <RecipeShare />
+        <Button variant="share" size="sm" onClick={copyToClipboard}>
+          Copy Snippet
+        </Button>
+      </HStack>
+      <chakra.pre
         w="100%"
-        pos="relative"
-        boxShadow={`inset 48px 0px 0px 0px ${shadow}`}
+        h="100%"
+        pos="absolute"
+        top={0}
+        ref={boxRef}
         overflow={removeScroll ? "hidden" : "auto"}
       >
-        <HStack
-          mt={2}
-          mx={4}
-          spacing={2}
-          justifyContent="flex-end"
-          top={2}
-          position="sticky"
-          zIndex={1}
-        >
-          <RecipeShare />
-          <Button variant="share" size="sm" onClick={copyToClipboard}>
-            Copy Snippet
-          </Button>
-        </HStack>
         <Box
-          as="pre"
-          w="100%"
-          boxShadow={`inset 48px 0px 0px 0px ${shadow}`}
-          overflow={removeScroll ? "hidden" : "auto"}
-        >
-          <code className={`line-numbers lang-${language?.toLowerCase()}`}>
-            {decoded}
-          </code>
-        </Box>
-      </Box>
+          as="span"
+          pos="absolute"
+          top={0}
+          left={0}
+          bg={shadow}
+          w="48px"
+          h="100%"
+          aria-hidden="true"
+        />
+        <code className={`line-numbers lang-${language?.toLowerCase()}`}>
+          {decoded}
+        </code>
+      </chakra.pre>
       <Script src="/prism.js" onLoad={handleLoad} />
     </Box>
   );

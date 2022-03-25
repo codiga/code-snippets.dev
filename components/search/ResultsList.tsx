@@ -28,7 +28,7 @@ const ResultsList = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const bg = useColorModeValue("brand.100", "brand.900");
   const sm = useBreakpointValue({ base: true, md: false }, "md");
-  const { results, fetchMoreSnippets } = useSearchResultsContext();
+  const { results, loading, fetchMoreSnippets } = useSearchResultsContext();
 
   useEffect(() => {
     setIsReady(true);
@@ -71,14 +71,10 @@ const ResultsList = () => {
         orientation="vertical"
       >
         <TabList
-          id="test"
           ref={listRef}
           w={296}
           bg={bg}
           flexShrink={0}
-          d="flex"
-          overflow="hidden"
-          flexDirection="column"
           border="none"
           pos="relative"
         >

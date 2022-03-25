@@ -19,22 +19,35 @@ const RecipeComments = () => {
 
   return (
     <>
-      <Heading
-        as="h2"
-        size="sm"
-        my={6}
-        mx={4}
-        d="flex"
-        justifyContent="space-between"
-        onClick={() => setIsVisible(!isVisible)}
-      >
-        <span>{commentsCount} Reviews</span>
-        {isVisible ? (
-          <ChevronUpIcon d={{ base: "block", md: "none" }} />
-        ) : (
-          <ChevronDownIcon d={{ base: "block", md: "none" }} />
-        )}
-      </Heading>
+      {commentsCount && commentsCount > 0 ? (
+        <Heading
+          as="h2"
+          size="sm"
+          my={6}
+          mx={4}
+          d="flex"
+          justifyContent="space-between"
+          onClick={() => setIsVisible(!isVisible)}
+        >
+          <span>{commentsCount} Reviews</span>
+          {isVisible ? (
+            <ChevronUpIcon d={{ base: "block", md: "none" }} />
+          ) : (
+            <ChevronDownIcon d={{ base: "block", md: "none" }} />
+          )}
+        </Heading>
+      ) : (
+        <Heading
+          as="h2"
+          size="sm"
+          my={6}
+          mx={4}
+          d="flex"
+          justifyContent="space-between"
+        >
+          <span>{commentsCount} Reviews</span>
+        </Heading>
+      )}
       <Box
         d={{ base: isVisible ? "flex" : "none", md: "flex" }}
         flexDir="column"
@@ -44,6 +57,7 @@ const RecipeComments = () => {
           alignItems="flex-start"
           spacing={8}
           px={4}
+          pb={4}
           pos="relative"
           ref={commentsRef}
         >

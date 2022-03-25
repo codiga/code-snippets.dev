@@ -9,6 +9,7 @@ const RecipeDetails = () => {
   return (
     <Box
       maxW={{ base: "100%", md: 340 }}
+      minW={340}
       bg={bg}
       flexShrink={0}
       d="flex"

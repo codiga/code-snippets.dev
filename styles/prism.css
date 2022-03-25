@@ -19,9 +19,9 @@ pre[class*="language-"] {
   hyphens: none;
 }
 pre[class*="language-"] {
-  padding: 0 1em;
+  padding: 4em 1em 0 1em;
   margin: 0;
-  overflow: auto;
+  /* overflow: hidden; */
 }
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
@@ -108,7 +108,7 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"].line-numbers {
-  position: relative;
+  position: absolute;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
