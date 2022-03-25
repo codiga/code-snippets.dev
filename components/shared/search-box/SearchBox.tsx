@@ -121,8 +121,12 @@ const SearchField = ({
   }, []);
 
   const handleSearch = () => {
-    const query = `?q=${inputValue}`;
-    push(`/search${inputValue ? query : ""}`);
+    const q = inputValue ? inputValue : undefined;
+    // push(`/search${inputValue ? q : ""}`);
+    push({
+      pathname: "search",
+      query: { ...query, q },
+    });
   };
 
   const handleEnter = (event: KeyboardEvent<HTMLInputElement>) => {
