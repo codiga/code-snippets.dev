@@ -6,11 +6,16 @@ import NavBarMobile from "./NavBarMobile";
 import { HeaderProps } from "./Header";
 import SearchBox from "components/shared/search-box/SearchBox";
 
-const HeaderMobile = ({ search = false, ...props }: HeaderProps & BoxProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+type HeaderMobileProps = HeaderProps &
+  BoxProps & {
+    onOpen: () => void;
+  };
 
-  useRouteChanged(onClose);
-
+const HeaderMobile = ({
+  onOpen,
+  search = false,
+  ...props
+}: HeaderMobileProps) => {
   return (
     <Box {...props}>
       <Box
@@ -30,7 +35,6 @@ const HeaderMobile = ({ search = false, ...props }: HeaderProps & BoxProps) => {
         />
       </Box>
       {search && <SearchBox />}
-      <NavBarMobile isOpen={isOpen} onClose={onClose} />
     </Box>
   );
 };
