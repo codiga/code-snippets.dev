@@ -37,7 +37,7 @@ const RecipeMetadata = () => {
       <meta
         key="ogimage"
         property="og:image"
-        content="/social/open-graph-snippets.png"
+        content={`https://image.codiga.io/api/generate/production/snipt/${id}/dark`}
       />
       <meta key="ogtype" property="og:type" content="website" />
       <meta key="ogurl" property="og:url" content={url} />
@@ -63,7 +63,7 @@ const RecipeMetadata = () => {
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://www.snipt.dev/social/open-graph-snippets.png"
+        content={`https://image.codiga.io/api/generate/production/snipt/${id}/dark`}
       />
     </Head>
   );
