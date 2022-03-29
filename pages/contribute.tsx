@@ -40,11 +40,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   1. Get the VS Code plugin
                 </Heading>
-                <Box>
+                <Box minH={163} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={133}
                     quality={100}
                     src="/contirbute/vscode/get-vscode-plugin.png"
                   />
@@ -60,11 +60,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   2. Write your code snippet
                 </Heading>
-                <Box>
+                <Box minH={163} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={163}
                     quality={100}
                     src="/contirbute/vscode/write-your-code-snippet.png"
                   />
@@ -78,11 +78,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   3. Save your code snippet
                 </Heading>
-                <Box>
+                <Box minH={163} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={380}
+                    height={160}
                     quality={100}
                     src="/contirbute/vscode/save-your-code-snippet.png"
                   />
@@ -111,11 +111,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   1. Get the JetBrains plugin
                 </Heading>
-                <Box>
+                <Box minH={145} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={120}
                     src="/contirbute/jetbrains/get-jetbrains-plugin.png"
                   />
                 </Box>
@@ -131,11 +131,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   2. Write your code snippet
                 </Heading>
-                <Box>
+                <Box minH={145} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={145}
                     src="/contirbute/jetbrains/write-your-code-snippet.png"
                   />
                 </Box>
@@ -147,11 +147,11 @@ const Contribute: NextPageWithLayout = () => {
                 <Heading as="h2" size="md">
                   3. Save your code snippet
                 </Heading>
-                <Box>
+                <Box minH={145} d="flex" alignItems="center">
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={150}
                     src="/contirbute/jetbrains/save-your-code-snippet.png"
                   />
                 </Box>
@@ -182,8 +182,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={228}
                     src="/contirbute/browser/codiga-app-login.png"
                   />
                 </Box>
@@ -199,8 +199,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={230}
                     src="/contirbute/browser/write-your-code-snippet.png"
                   />
                 </Box>
@@ -215,8 +215,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={224}
                     src="/contirbute/browser/save-your-code-snippet.png"
                   />
                 </Box>
@@ -246,8 +246,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={120}
                     src="/contirbute/chrome/get-chrome-extension.png"
                   />
                 </Box>
@@ -266,8 +266,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={114}
                     src="/contirbute/chrome/select-your-code-snippet.png"
                   />
                 </Box>
@@ -282,8 +282,8 @@ const Contribute: NextPageWithLayout = () => {
                 <Box>
                   <Image
                     alt="Codiga platform"
-                    width={280}
-                    height={200}
+                    width={384}
+                    height={124}
                     src="/contirbute/chrome/save-your-code-snippet.png"
                   />
                 </Box>
