@@ -14,7 +14,7 @@ const styles = {
       height: "100%",
       opacity: 0.7,
     },
-    "ps__rail-y": {
+    "ps__thumb-y": {
       zIndex: 100,
     }
   },

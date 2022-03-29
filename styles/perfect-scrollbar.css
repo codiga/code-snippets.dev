@@ -34,6 +34,7 @@
   right: 0;
   /* please don't change 'position' */
   position: absolute;
+  z-index: 999;
 }
 
 .ps--active-x > .ps__rail-x,
@@ -86,6 +87,7 @@
   right: 2px;
   /* please don't change 'position' */
   position: absolute;
+  z-index: 999;
 }
 
 .ps__rail-x:hover > .ps__thumb-x,

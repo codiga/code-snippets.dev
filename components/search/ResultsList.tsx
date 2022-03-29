@@ -17,7 +17,7 @@ import RecipeDetails from "components/shared/recipe/RecipeDetails";
 import RecipeSummary from "components/shared/recipe/RecipeSummary";
 import { RecipeProvider } from "contexts/RecipeProvider";
 import { useSearchResultsContext } from "contexts/SearchResulstsProvider";
-import { useEffect, useRef, useState } from "react";
+import { FocusEvent, useEffect, useRef, useState } from "react";
 import { Recipe } from "types/Recipe";
 import PerfectScrollbar from "perfect-scrollbar";
 import InfiniteFetcher from "./InfiniteFetcher";
@@ -43,6 +43,13 @@ const ResultsList = () => {
 
   const handleTabChange = (index: number) => {
     setTabIndex(index);
+  };
+
+  const handleFocus = (event: FocusEvent<HTMLButtonElement, Element>) => {
+    event.target.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+    });
   };
 
   if (sm) {
@@ -85,7 +92,7 @@ const ResultsList = () => {
               p={0}
               color="inherit !important"
               border="none"
-              onFocus={(event) => event.target.scrollIntoView(false)}
+              onFocus={handleFocus}
             >
               <RecipeProvider id={item.id}>
                 <RecipeSummary
