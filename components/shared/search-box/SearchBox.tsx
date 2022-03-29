@@ -122,10 +122,14 @@ const SearchField = ({
 
   const handleSearch = () => {
     const q = inputValue ? inputValue : undefined;
-    // push(`/search${inputValue ? q : ""}`);
+
+    // remove single snippet page params and leave only
+    // the search params like view, lang, etc...
+    const { slug, id, language, ...oldQuery } = query;
+
     push({
-      pathname: "search",
-      query: { ...query, q },
+      pathname: "/search",
+      query: { ...oldQuery, q },
     });
   };
 
