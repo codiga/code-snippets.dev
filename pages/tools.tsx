@@ -141,19 +141,19 @@ const Tools: NextPageWithLayout = () => {
             <Card spacing={4} alignItems="flex-start">
               <Heading as="h3" size="sm" d="flex" alignItems="center" gap={1}>
                 <Image
-                  alt="snapiffy logo"
+                  alt="snappify logo"
                   width="32px"
                   height="32px"
                   src="/tools/snapiffy-logo.svg"
                 />{" "}
-                Snapiffy
+                Snappify
               </Heading>
               <Text fontSize="md">
                 Easily explain your code and share your knowledge with the rest
                 of the world.
               </Text>
               <Link href="https://snappify.io/" variant="gradient">
-                Go to Sanpiffy
+                Go to Snappify
               </Link>
             </Card>
             <Card spacing={4} alignItems="flex-start">
