@@ -8,3 +8,10 @@ export type User = {
   username?: string;
   info?: UserInfo;
 };
+
+export type PublicUser = {
+  id?: number;
+  hasSlug?: boolean;
+  slug?: string;
+  displayName?: string;
+};

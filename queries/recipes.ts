@@ -48,12 +48,9 @@ export const GET_PUBLIC_RECIPE_BY_ID = gql`
         comment
         author {
           id
-          username
-          info {
-            firstname
-            lastname
-            url
-          }
+          hasSlug
+          slug
+          displayName
         }
       }
       commentsCount

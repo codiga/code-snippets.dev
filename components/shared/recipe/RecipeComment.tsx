@@ -1,19 +1,20 @@
 import { VStack, Text } from "@chakra-ui/react";
-import { User } from "types/User";
+import { PublicUser } from "types/User";
 import CommentAuthor from "./CommentAuthor";
 
 type RecipeCommentProps = {
-  author: User | undefined;
+  author: PublicUser | undefined;
   content: string | undefined;
   date: number | undefined;
   rating: number | undefined;
 };
 
-const RecipeComment = ({ author, date, content, rating }: RecipeCommentProps) => {
-  const name = `${author?.info?.firstname || ""} ${
-    author?.info?.lastname || ""
-  }`.trim();
-
+const RecipeComment = ({
+  author,
+  date,
+  content,
+  rating,
+}: RecipeCommentProps) => {
   const avatar = author?.id
     ? `${process.env.NEXT_PUBLIC_CODIGA_API}/user/${author.id}/avatar`
     : "";
@@ -22,7 +23,7 @@ const RecipeComment = ({ author, date, content, rating }: RecipeCommentProps) =>
     <VStack w="100%" spacing={4} alignItems="flex-start">
       <CommentAuthor
         avatar={avatar}
-        name={author?.username || name || "Anonymous User"}
+        name={author?.displayName || "Anonymous User"}
         date={date ? new Date(date)?.toLocaleString() : ""}
         rating={rating || 0}
       />
