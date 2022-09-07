@@ -1,4 +1,4 @@
-import { User } from "./User";
+import { PublicUser } from "./User";
 
 export type Comment = {
   id?: number;
@@ -6,5 +6,5 @@ export type Comment = {
   rating?: number;
   comment?: string;
   securityFlag?: boolean;
-  author?: User;
+  author?: PublicUser;
 };
