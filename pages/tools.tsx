@@ -45,11 +45,15 @@ const Tools: NextPageWithLayout = () => {
                 Codiga
               </Heading>
               <Text fontSize="md">
-                Code snippets manager to create and share snippets from your
-                IDE.
+                The Codiga Code Snippets Manager lets you create, share and
+                import code snippets in VS Code, JetBrains, Chrome and your
+                Desktop.
               </Text>
-              <Link href="https://app.codiga.io" variant="gradient">
-                Visit Codiga.io
+              <Link
+                href="https://www.codiga.io/coding-assistant/"
+                variant="gradient"
+              >
+                Get Codiga
               </Link>
             </Card>
           </SimpleGrid>
