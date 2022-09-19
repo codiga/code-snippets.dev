@@ -4,7 +4,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Codiga-blue?logo=linkedin&logoColor=blue&color=darkcyan)](https://www.linkedin.com/company/codigahq/)
 [![Twitter](https://img.shields.io/badge/Twitter-getcodiga-blue?logo=twitter&logoColor=blue&color=blue)](https://twitter.com/getcodiga)
 
-# code-snippets.dev
+# code-snippets.dev: the best information for code snippets tooling
 
 This repository is for [code-snippets.dev](https://www.code-snippets.dev/) website, a collection of resources for user to manage code snippets.
 By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
