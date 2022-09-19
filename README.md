@@ -9,6 +9,17 @@
 This repository is for [code-snippets.dev](https://www.code-snippets.dev/) website, a collection of resources for user to manage code snippets.
 By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
 
+This website is maintained by [Codiga](https://www.codiga.io).
+
+## Code Snippets Manager
+
+Codiga provides multiple [code snippets managers](https://www.codiga.io/coding-assistant/):
+
+ * [VS Code Code Snippets Manager](https://github.com/codiga/vscode-plugin)
+ * [JetBrains Code Snippets Manager](https://github.com/codiga/jetbrains-plugin)
+ * [Chrome Extension for Code Snippets](https://github.com/codiga/chrome-extension)
+ * [Code Snippets Manager for Windows, Mac OS and Linux](https://github.com/codiga/code-snippets-manager)
+
 ## Why Code Snippets are important?
 
 When using code snippets for yourself, you make sure you define code once and reuse it correctly in other codebases. It guarantees you are not missing an argument or an error case.When sharing code snippets in a team, it ensures that the team is using the same code consistently. By having a library of code snippets shared with your team, you ensure that your team is always using safe, vetted code patterns in all your code base.
@@ -17,6 +28,8 @@ When using code snippets for yourself, you make sure you define code once and re
 
 [code-snippets.dev](https://www.code-snippets.dev/) surfaces snippets from the [Codiga](https://www.codiga.io) platform. If you want to add
 snippets to the search engine, add more snippets on the [Codiga](https://www.codiga.io) platform.
+
+All Snippets are being also surfaced on the [Codiga Hub](https://app.codiga.io/hub).
 
 ## Contribute
 
