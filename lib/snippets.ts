@@ -24,9 +24,8 @@ export function getSnippetUrl({ id, name, language }: Partial<Recipe>) {
 }
 
 export function getRecipePath({ id, keywords }: Partial<Recipe>) {
-  const divider = keywords && keywords.length > 0 ? `-` : "";
-
-  return `/hub/snippet/${id}${divider}${keywords?.join("-")}/view`;
+  const ending = keywords && keywords.length > 0 ? keywords?.join("-") : "view";
+  return `/hub/snippet/${id}/${ending}`;
 }
 
 export function getRecipeUrl({ id, keywords }: Partial<Recipe>) {
