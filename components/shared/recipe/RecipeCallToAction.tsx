@@ -34,7 +34,7 @@ const RecipeCallToAction = (props: RecipeCallToActionProps) => {
         Add Review on Codiga.io
       </Link>
       <Text fontSize="xs" textAlign="center">
-        Login on Codiga to add a comment on this recipe.
+        Login on Codiga to add a comment on this snippet.
       </Text>
     </VStack>
   );

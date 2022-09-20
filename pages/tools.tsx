@@ -8,6 +8,7 @@ import {
   Link,
   SimpleGrid,
   Text,
+  useColorMode,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
@@ -17,6 +18,8 @@ import PageLayout from "components/layout/PageLayout";
 
 const Tools: NextPageWithLayout = () => {
   const borderColor = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <PageTitle
@@ -54,6 +57,66 @@ const Tools: NextPageWithLayout = () => {
                 variant="gradient"
               >
                 Get Codiga
+              </Link>
+            </Card>
+            <Card spacing={4} alignItems="flex-start">
+              <Heading as="h3" size="sm" d="flex" alignItems="center" gap={1}>
+                <Image
+                  alt="codiga logo"
+                  width="32px"
+                  height="32px"
+                  src="/tools/windows-logo.svg"
+                />{" "}
+                For Windows
+              </Heading>
+              <Text fontSize="md">
+                Manage and search code snippets from your desktop.
+              </Text>
+              <Link
+                href="https://github.com/codiga/code-snippets-manager/releases/latest"
+                variant="gradient"
+              >
+                Download on Github
+              </Link>
+            </Card>
+            <Card spacing={4} alignItems="flex-start">
+              <Heading as="h3" size="sm" d="flex" alignItems="center" gap={1}>
+                <Image
+                  alt="codiga logo"
+                  width="32px"
+                  height="32px"
+                  src={`/tools/macos-logo-${colorMode}.svg`}
+                />{" "}
+                For MacOS
+              </Heading>
+              <Text fontSize="md">
+                Manage and search code snippets from your desktop.
+              </Text>
+              <Link
+                href="https://github.com/codiga/code-snippets-manager/releases/latest"
+                variant="gradient"
+              >
+                Download on Github
+              </Link>
+            </Card>
+            <Card spacing={4} alignItems="flex-start">
+              <Heading as="h3" size="sm" d="flex" alignItems="center" gap={1}>
+                <Image
+                  alt="codiga logo"
+                  width="32px"
+                  height="32px"
+                  src="/tools/linux-logo.svg"
+                />{" "}
+                For Linux
+              </Heading>
+              <Text fontSize="md">
+                Manage and search code snippets from your desktop.
+              </Text>
+              <Link
+                href="https://github.com/codiga/code-snippets-manager/releases/latest"
+                variant="gradient"
+              >
+                Download on Github
               </Link>
             </Card>
           </SimpleGrid>
@@ -252,8 +315,10 @@ const Tools: NextPageWithLayout = () => {
           <Heading size="lg">Not seeing your tool?</Heading>
           <Text>
             Send us an email at{" "}
-            <Link href="mailto:hello@snipt.dev">hello@snipt.dev</Link> to add
-            your tool to the list!
+            <Link href="mailto:hello@code-snippets.dev">
+              hello@code-snippets.dev
+            </Link>{" "}
+            to add your tool to the list!
           </Text>
         </VStack>
       </Container>

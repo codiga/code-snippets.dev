@@ -9,7 +9,7 @@
 </h1>
 
 <h3 align="center">
-🎉 Welcome to snipt.dev 🎉
+🎉 Welcome to code-snippets.dev 🎉
 </h3>
 
 <div align="center">
@@ -28,7 +28,7 @@
 
 ### What is it?
 
-This repository is for our [snipt.dev](https://www.snipt.dev/) website, a Code Snippets search engine. Code Snippets are code blocks you can share and reuse.
+This repository is for our [code-snippets.dev](https://www.code-snippets.dev/) website, a Code Snippets search engine. Code Snippets are code blocks you can share and reuse.
 By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
 
 ### Why Code Snippets are important?
@@ -37,7 +37,7 @@ When using code snippets for yourself, you make sure you define code once and re
 
 ### How Code Snippets are curated?
 
-[snipt.dev](https://www.snipt.dev/) surfaces snippets from the [Codiga](https://www.codiga.io) platform. If you want to add
+[code-snippets.dev](https://www.code-snippets.dev/) surfaces snippets from the [Codiga](https://www.codiga.io) platform. If you want to add
 snippets to the search engine, add more snippets on the [Codiga](https://www.codiga.io) platform.
 
 ### Contribute
@@ -68,4 +68,4 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 #### Issues
 
-- Found any bug, please create a new [issue](https://github.com/codiga/snipt.dev/issues) before working on the solution.
+- Found any bug, please create a new [issue](https://github.com/codiga/code-snippets.dev/issues) before working on the solution.
