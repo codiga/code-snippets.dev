@@ -31,7 +31,7 @@ const RecipeCallToAction = (props: RecipeCallToActionProps) => {
         rel="noreferrer"
         variant="gradient"
       >
-        Add Review on Codiga.io
+        Add Comment on Codiga.io
       </Link>
       <Text fontSize="xs" textAlign="center">
         Login on Codiga to add a comment on this snippet.
