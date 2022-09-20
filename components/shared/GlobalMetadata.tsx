@@ -3,7 +3,7 @@ import Head from "next/head";
 const GlobalMetadata = () => {
   return (
     <Head>
-      <title>Snipt: Code Snippets Search Engine</title>
+      <title>Code Snippets: Search Engine</title>
       <meta
         key="charset"
         httpEquiv="content-type"
@@ -54,7 +54,7 @@ const GlobalMetadata = () => {
       <meta
         key="ogtitle"
         property="og:title"
-        content="Snipt: Code Snippet Search Engine"
+        content="Code Snippets: Search Engine"
       />
       <meta
         key="ogdescription"
@@ -67,7 +67,11 @@ const GlobalMetadata = () => {
         content="/social/open-graph.png"
       />
       <meta key="ogtype" property="og:type" content="website" />
-      <meta key="ogurl" property="og:url" content="https://www.snipt.dev/" />
+      <meta
+        key="ogurl"
+        property="og:url"
+        content="https://www.code-snippets.dev/"
+      />
       <meta key="oglocale" property="og:locale" content="en_US" />
 
       <meta
@@ -80,7 +84,7 @@ const GlobalMetadata = () => {
       <meta
         key="twitterTitle"
         name="twitter:title"
-        content="Snipt: Code Snippet Search Engine"
+        content="Code Snippets: Search Engine"
       />
       <meta
         key="twitterDescription"
@@ -90,7 +94,7 @@ const GlobalMetadata = () => {
       <meta
         key="twitterImage"
         name="twitter:image"
-        content="https://www.snipt.dev/social/open-graph.png"
+        content="https://www.code-snippets.dev/social/open-graph.png"
       />
     </Head>
   );

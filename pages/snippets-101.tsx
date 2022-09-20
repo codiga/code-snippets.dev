@@ -122,7 +122,7 @@ const Snippets: NextPageWithLayout = () => {
             <Box d={{ base: "none", md: "block" }}>
               <Image
                 width={492}
-                height={132}
+                height={201}
                 alt="code snippets tools"
                 src="/snippets/code-snippets-tools.svg"
               />
@@ -130,7 +130,7 @@ const Snippets: NextPageWithLayout = () => {
             <Box d={{ base: "block", md: "none" }}>
               <Image
                 width={311}
-                height={240}
+                height={401}
                 alt="code snippets tools"
                 src="/snippets/code-snippets-tools-mobile.svg"
               />

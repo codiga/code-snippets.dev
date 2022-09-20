@@ -43,7 +43,7 @@ const RecipeSummary = ({
       {big && (
         <>
           <Link href={codigaRecipeUrl} mt={row ? 0 : 4} fontSize="sm">
-            View Recipe on Codiga.io
+            View Snippet on Codiga.io
           </Link>
           <Text fontSize="sm" mt={row ? 0 : 4}>
             {description}

@@ -6,7 +6,7 @@ const RecipeMetadata = () => {
   const { id, name, description, language, keywords } =
     useRecipeContext() || {};
 
-  const title = `Snipt - Code Snippet - ${name}`;
+  const title = `Code Snippets - ${name}`;
   const metaDescription = `Code Snippet in ${language}: ${description}`;
   const openGraphDescription = `${language}: ${name}`;
   const url = getSnippetUrl({ id, name, language });
@@ -27,7 +27,7 @@ const RecipeMetadata = () => {
       <meta
         key="ogtitle"
         property="og:title"
-        content="Snipt: Code Snippet Search Engine"
+        content="Code Snippets: Search Engine"
       />
       <meta
         key="ogdescription"
@@ -53,7 +53,7 @@ const RecipeMetadata = () => {
       <meta
         key="twitterTitle"
         name="twitter:title"
-        content="Snipt: Code Snippet Search Engine"
+        content="Code Snippets: Search Engine"
       />
       <meta
         key="twitterDescription"

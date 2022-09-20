@@ -12,7 +12,7 @@ const SocialFooter = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://twitter.com/intent/tweet/?url=https://www.snipt.dev&text=Check%20out%20this%20code%20snippet%20%23cleancode"
+            href="https://twitter.com/intent/tweet/?url=https://www.code-snippets.dev&text=Check%20out%20this%20code%20snippet%20%23cleancode"
           >
             <TwitterLogo />
           </a>
@@ -21,7 +21,7 @@ const SocialFooter = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.snipt.dev"
+            href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.code-snippets.dev"
           >
             <LinkedInLogo />
           </a>
@@ -30,7 +30,7 @@ const SocialFooter = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.snipt.dev"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://www.code-snippets.dev"
           >
             <FacebookLogo />
           </a>

@@ -6,8 +6,10 @@
 
 # code-snippets.dev: the best information for code snippets tooling
 
+
 This repository is for [code-snippets.dev](https://www.code-snippets.dev/) website, a collection of resources for user to manage code snippets.
 By defining reusable code blocks you can import in your IDE, you not only improve your productivity but you also make sure you always import the correct code and are not missing anything (e.g. missing argument, not checking error code or exceptions).
+
 
 This website is maintained by [Codiga](https://www.codiga.io).
 
@@ -19,6 +21,7 @@ Codiga provides multiple [code snippets managers](https://www.codiga.io/coding-a
  * [JetBrains Code Snippets Manager](https://github.com/codiga/jetbrains-plugin)
  * [Chrome Extension for Code Snippets](https://github.com/codiga/chrome-extension)
  * [Code Snippets Manager for Windows, Mac OS and Linux](https://github.com/codiga/code-snippets-manager)
+
 
 ## Why Code Snippets are important?
 
