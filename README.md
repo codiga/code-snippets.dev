@@ -1,4 +1,4 @@
-
+[Datadog acquired Codiga](https://www.codiga.io/blog/codiga-joins-datadog/). This repository is no longer active.
 
 [![Slack](https://img.shields.io/badge/Slack-@codigahq.svg?logo=slack)](https://join.slack.com/t/codigahq/shared_invite/zt-9hvmfwie-9BUVFwZDwvpIGlkHv2mzYQ)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Codiga-blue?logo=linkedin&logoColor=blue&color=darkcyan)](https://www.linkedin.com/company/codigahq/)
